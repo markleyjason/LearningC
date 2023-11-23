@@ -135,6 +135,7 @@
     <ClCompile Include="advcal2015p10.c" />
     <ClCompile Include="advcal2015p11.c" />
     <ClCompile Include="advcal2015p12.c" />
+    <ClCompile Include="advcal2015p13.c" />
     <ClCompile Include="advcal2015p3.c" />
     <ClCompile Include="advcal2015p2.c" />
     <ClCompile Include="advcal2015p1.c" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2015p12.txt" />
+    <Text Include="input2015p13.txt" />
     <Text Include="input2015p9.txt" />
     <Text Include="input2015p1.txt" />
     <Text Include="input2015p2.txt" />
