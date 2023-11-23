@@ -51,6 +51,18 @@
     <ClCompile Include="asvcal2015p9.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="advcal2015p10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collections.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2015p11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2015p12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2015p1.txt">
@@ -66,9 +78,13 @@
     <Text Include="input2015p7.txt" />
     <Text Include="input2015p8.txt" />
     <Text Include="input2015p9.txt" />
+    <Text Include="input2015p12.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collections.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

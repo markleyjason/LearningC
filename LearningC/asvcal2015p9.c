@@ -21,13 +21,16 @@ __int32 getIndex(struct Node* head, char* city);
 __int32 findShortestPathHead(struct Node* head);
 __int32 findShortestPath(struct Node* head, __int32 pathId);
 
-main() {
+adv2015p9() {
 	FILE* input;
 	__int32 buffer = 50;
 	char firstCity[50];
 	char secondCity[50];
 	__int32 travel = 0;
 	__int32 pathLength = 0;
+	__int32 tempPathLength = 0;
+	__int32 numCities = 0;
+	__int32 curCity = -1;
 	struct Node* head = NULL;
 
 	errno_t input_error;
@@ -37,6 +40,7 @@ main() {
 
 	if (!input_error) {
 		while (fscanf_s(input, "%s to %s = %d", firstCity, buffer, secondCity, buffer, &travel) != EOF) {
+			numCities++;
 			if (head == NULL) {
 				buildHead(&head, firstCity, secondCity, buffer, travel);
 			} else {
@@ -50,7 +54,21 @@ main() {
 				}
 			}
 		}
-		pathLength = findShortestPathHead(head);
+		while (curCity < head->numConnections) {
+			if (curCity == -1) {
+				pathLength = findShortestPathHead(head);
+				printf("Path length found: %d\n", pathLength);
+			}
+			else {
+				tempPathLength = findShortestPathHead(head->next[curCity]->next);
+				printf("Path length found: %d\n", tempPathLength);
+				if (tempPathLength > pathLength) {
+					pathLength = tempPathLength;
+				}
+			}
+			curCity++;
+		}
+
 		printf("The shortest path is: %d", pathLength);
 		fclose(input);
 	}
@@ -60,7 +78,7 @@ void buildHead(struct Node** head, char* firstCity, char* secondCity, __int32 bu
 	*head = (struct Node*)malloc(sizeof(struct Node));
 	if ((*head) != NULL) {
 		strcpy_s((*head)->name, buffer, firstCity);
-		(*head)->pathId = 0;
+		(*head)->pathId = -1;
 		(*head)->numConnections = 0;
 		attachToHead(*head, firstCity, secondCity, buffer, travel);
 	}
@@ -99,13 +117,16 @@ __int32 getIndex(struct Node* head, char* city) {
 
 __int32 findShortestPathHead(struct Node* head) {
 	__int32 index = 0;
-	__int32 pathLength = INT_MAX;
+	__int32 curCity = 0;
+	__int32 pathLength = INT_MIN;
 	__int32 tempLength;
 
-	head->pathId = index;
+	
 	while (index < head->numConnections) {
+		head->pathId = index;
+		printf("Path: %s + %d to ", head->name, head->next[index]->distance);
 		tempLength = findShortestPath(head->next[index]->next, index) + head->next[index]->distance;
-		if (tempLength < pathLength) {
+		if (tempLength > pathLength) {
 			pathLength = tempLength;
 		}
 		index++;
@@ -115,23 +136,26 @@ __int32 findShortestPathHead(struct Node* head) {
 
 __int32 findShortestPath(struct Node* head, __int32 pathId) {
 	__int32 index = 0;
-	__int32 pathLength = INT_MAX;
+	__int32 pathLength = INT_MIN;
 	__int32 tempLength = 0;
 	char foundChild = 0;
 
-	head->pathId = pathId;
+	
 	while (index < head->numConnections) {
+		head->pathId = pathId;
 		if (head->next[index]->next->pathId != pathId) {
+			printf("%s + %d ", head->name, head->next[index]->distance);
 			foundChild = 1;
 			tempLength = findShortestPath(head->next[index]->next, pathId) + head->next[index]->distance;
-			if (tempLength < pathLength) {
+			if (tempLength > pathLength) {
 				pathLength = tempLength;
 			}
 		}
 		index++;
 	}
-
+	head->pathId = -1;
 	if (foundChild == 0) {
+		printf("\n");
 		return 0;
 	} else {
 		return pathLength;

@@ -132,6 +132,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="advcal2014p7t2.c" />
+    <ClCompile Include="advcal2015p10.c" />
+    <ClCompile Include="advcal2015p11.c" />
+    <ClCompile Include="advcal2015p12.c" />
     <ClCompile Include="advcal2015p3.c" />
     <ClCompile Include="advcal2015p2.c" />
     <ClCompile Include="advcal2015p1.c" />
@@ -141,10 +144,12 @@
     <ClCompile Include="advcal2015p7.c" />
     <ClCompile Include="advcal2015p8.c" />
     <ClCompile Include="asvcal2015p9.c" />
+    <ClCompile Include="collections.c" />
     <ClCompile Include="helper.c" />
     <ClCompile Include="rightT.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="input2015p12.txt" />
     <Text Include="input2015p9.txt" />
     <Text Include="input2015p1.txt" />
     <Text Include="input2015p2.txt" />
@@ -156,6 +161,7 @@
     <Text Include="testing_input.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="collections.h" />
     <ClInclude Include="helper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,5 @@
 #include "helper.h"
+#include "stdlib.h"
 
 char isDigit(char input) {
 	__int32 ret = 0;
@@ -22,6 +23,22 @@ __int32 stoai(char* input) {
 		index++;
 	}
 	return num * sign;
+}
+
+//Assumes all integers in the array are only a single digit (0-9)
+char* uint32arraytostring(unsigned __int32 size, unsigned __int32* start) {
+	char* array = malloc(sizeof(__int32) * size + 1);
+	unsigned __int32 index = 0;
+	if (array != NULL) {
+		while (index < size) {
+			array[index] = start[index] + '0';
+			index++;
+		}
+		array[index] = '\0';
+	}
+	
+	
+	return array;
 }
 
 __int32 ctoai(char input) {

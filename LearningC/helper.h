@@ -5,6 +5,10 @@
 char isDigit(char);
 
 __int32 ctoai(char);
+
+//Assumes all integers in the array are only a single digit (0-9)
+char* uint32arraytostring(unsigned __int32 size, unsigned __int32* start);
+
 __int32 stoai(char* input);
 
 __int32 findMin(__int32*, __int32);
