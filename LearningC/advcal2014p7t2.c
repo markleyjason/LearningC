@@ -27,7 +27,7 @@ void calculate_wire(char* name, __int32 size, struct WireFrame list[400]);
 
 __int32 findWireFrame(char* name, __int32 size, struct WireFrame list[400]);
 
-int adv2015p7t2() {
+void adv2015p7t2() {
 	__int32 numWires = 0;
 	__int32 index = 0;
 	unsigned __int16 firstOutput;
@@ -47,7 +47,7 @@ int adv2015p7t2() {
 		while (fgets(line, line_buffer, fptr) != NULL) {
 			if (line[0] != '\n') {
 				//break it apart and create the wire frame
-				addToList(strlen(line), line, numWires, wireFrameList);
+				addToList((__int32)strlen(line), line, numWires, wireFrameList);
 				numWires++;
 			}
 		}

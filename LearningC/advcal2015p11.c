@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 __int32 checkForGoodPassword(char password[9]);
 __int32 containsTripleIncreasing(char password[9]);
@@ -13,7 +14,6 @@ adv2015p11() {
 	increment(password);
 	while (checkForGoodPassword(password) != 1) {
 		increment(password);
-		//printf("Trying password: %s\n", password);
 	}
 	printf("The new password is: %s\n", password);
 	return 0;
@@ -59,7 +59,7 @@ __int32 doesntIncludeBannedWords(char password[9]) {
 		counter = 0;
 		while (hasBad == 1 && counter < 3) {
 			if (password[index] == badChars[counter]) {
-				hasBad == 0;
+				hasBad = 0;
 			}
 			counter++;
 		}

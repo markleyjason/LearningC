@@ -48,7 +48,7 @@
     <ClCompile Include="advcal2015p8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="asvcal2015p9.c">
+    <ClCompile Include="advcal2015p9.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="advcal2015p10.c">
@@ -64,6 +64,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="advcal2015p13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="namedmultinodeconnector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,6 +92,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="collections.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="namedmultinodeconnector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

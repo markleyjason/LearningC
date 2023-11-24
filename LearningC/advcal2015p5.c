@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char containsVowels(char* line);
+char containsVowels(char* line, __int32 len);
 char hasDoubleNoBad(char* line, __int32 len);
 char part2(char* line, __int32 len);
 
@@ -24,7 +24,7 @@ adv2015p5() {
 			rules_passed = 0;
 			//rules_passed += containsVowels(line, strlen(line));
 			//rules_passed += hasDoubleNoBad(line, strlen(line));
-			rules_passed = part2(line, strlen(line));
+			rules_passed = part2(line, (__int32)strlen(line));
 			if (rules_passed == rules_needed) {
 				nice_words++;
 			}
@@ -37,7 +37,7 @@ adv2015p5() {
 
 }
 
-char containsVowels(char* line, __int32 len) {
+static char containsVowels(char* line, __int32 len) {
 	__int32 count = 0;
 	__int32 position = 0;
 	char vowel = 0;

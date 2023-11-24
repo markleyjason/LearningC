@@ -4,7 +4,7 @@
 	 int floor = 0;
 	 int position = 1;
 	 FILE* fptr;
-	 char c = NULL;
+	 char c;
 
 	 char error = fopen_s(&fptr, "input2015p1.txt", "r");
 	 if (fptr != NULL) {

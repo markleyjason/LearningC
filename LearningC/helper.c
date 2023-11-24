@@ -1,5 +1,5 @@
 #include "helper.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 char isDigit(char input) {
 	__int32 ret = 0;
@@ -47,7 +47,7 @@ __int32 ctoai(char input) {
 
 __int32 findMin(__int32* array, __int32 length) {
 	int i = 0;
-	int min = INT32_MAX;
+	int min = INT_MAX;
 
 	for (i = 0; i < length; i++) {
 		if (array[i] < min) {

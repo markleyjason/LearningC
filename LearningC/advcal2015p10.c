@@ -25,7 +25,7 @@ adv2015p10() {
 	appendIntegerArray(numbers1, 1);
 	appendIntegerArray(numbers1, 1);
 	appendIntegerArray(numbers1, 3);
-	printingChar = uint32arraytostring(numbers1->logicalSize, numbers1->data);
+	printingChar = uint32arraytostring((unsigned __int32)numbers1->logicalSize, numbers1->data);
 	printf("Step %d: %s\n", counter, printingChar);
 	free(printingChar);
 
@@ -49,7 +49,7 @@ adv2015p10() {
 			appendIntegerArray(numbers2, numCount);
 			appendIntegerArray(numbers2, num);
 			workingArray = 1;
-			printingChar = uint32arraytostring(numbers2->logicalSize, numbers2->data);
+			printingChar = uint32arraytostring((unsigned __int32)numbers2->logicalSize, numbers2->data);
 			printf("Step %d: %s\n", counter + 1, printingChar);
 			free(printingChar);
 		} else {
@@ -69,7 +69,7 @@ adv2015p10() {
 			}
 			appendIntegerArray(numbers1, numCount);
 			appendIntegerArray(numbers1, num);
-			printingChar = uint32arraytostring(numbers1->logicalSize, numbers1->data);
+			printingChar = uint32arraytostring((unsigned __int32)numbers1->logicalSize, numbers1->data);
 			printf("Step %d: %s\n", counter + 1, printingChar);
 			free(printingChar);
 			workingArray = 0;
@@ -79,14 +79,14 @@ adv2015p10() {
 	}
 
 	if (workingArray == 0) {
-		printingChar = uint32arraytostring(numbers1->logicalSize, numbers1->data);
+		printingChar = uint32arraytostring((unsigned __int32)numbers1->logicalSize, numbers1->data);
 		printf("Step %d: %s\n", counter + 1, printingChar);
-		printf("Ending length is: %d\n", numbers1->logicalSize);
+		printf("Ending length is: %d\n", (__int32)numbers1->logicalSize);
 		free(printingChar);
 	} else {
-		printingChar = uint32arraytostring(numbers2->logicalSize, numbers2->data);
+		printingChar = uint32arraytostring((unsigned __int32)numbers2->logicalSize, numbers2->data);
 		printf("Step %d: %s\n", counter, printingChar);
-		printf("Ending length is: %d\n", numbers2->logicalSize);
+		printf("Ending length is: %d\n", (__int32)numbers2->logicalSize);
 		free(printingChar);
 	}
 	return 0;

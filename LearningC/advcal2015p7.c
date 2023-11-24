@@ -27,9 +27,9 @@ struct Wire {
 	enum ops operation;
 };
 
-struct Node {
+struct NamedMultiNode {
 	struct WireFrame frame;
-	struct Node* next;
+	struct NamedMultiNode* next;
 };
 
 struct WireFrame breakUpT1(__int32 size, char* line);
@@ -57,7 +57,7 @@ int adv2015p7t1() {
 		while (fgets(line, line_buffer, fptr) != NULL) {
 			if (line[0] != '\n') {
 				//break it apart and create the wire frame
-				temp_frame = breakUpT1(strlen(line), line);
+				temp_frame = breakUpT1((__int32)strlen(line), line);
 				numWires++;
 			}
 		}
@@ -132,7 +132,6 @@ __int32 insertNode(struct Wire* head, struct WireFrame frame, struct WireFrame* 
 	__int32 success = 0;
 	struct Wire* tempNode = NULL;
 	struct Wire* working_node;
-	struct WireFrame * working_list_node;
 	if (head == NULL) {
 		success = replace_head(head, frame, 0);
 	} else {

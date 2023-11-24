@@ -1,44 +1,64 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "helper.h"
+#include "namedmultinodeconnector.h"
 
-
-typedef struct SeatingHappiness {
-	char mainPerson[10];
-	__int32 happinessChange;
-	char seatedNextTo[10];
-}SeatingHappiness;
-
+//advcal2015p13() {
 main() {
 	FILE* fptr;
 	errno_t error;
-	SeatingHappiness happinessGrid[8][7];
-	unsigned __int32 nameBuffer = 10;
-	SeatingHappiness tempPerson = { .mainPerson = { '\0' }, .happinessChange = 0, .seatedNextTo = { '\0' } };
-	unsigned __int32 index = 0;
+	char firstPerson[10] = { '\0' };
+	char secondPerson[10] = { '\0' };
 	char gOrL[5] = { '\0' };
-	unsigned __int32 mainIndex = 0;
-	unsigned __int32 subIndex = 0;
+	unsigned __int32 nameBuffer = 10;
+	__int32 index = -1;
+	__int32 happinessAmount = INT_MIN;
+	__int32 tempHappinessAmount = 0;
+	unsigned __int32 numPeople = 0;
+	NamedMultiNode* head = NULL;
 
 
-	error = fopen_s(&fptr, "input2015p13.txt", "r");
+	//error = fopen_s(&fptr, "input2015p13.txt", "r");
+	error = fopen_s(&fptr, "testing_input.txt", "r");
 
 	if (!error) {
 		//read input
-		while (fscanf_s(fptr, "%9s would %4s %d happiness units by sitting next to %9s.", tempPerson.mainPerson, nameBuffer, gOrL, 5, &tempPerson.happinessChange, tempPerson.seatedNextTo, nameBuffer) != EOF) {
+		while (fscanf_s(fptr, "%9s would %4s %d happiness units by sitting next to %9s.", firstPerson,  nameBuffer, gOrL, 5, &tempHappinessAmount, secondPerson, nameBuffer) != EOF) {
+			numPeople++;
+			secondPerson[strlen(secondPerson) - 1] = '\0';
 			if (gOrL[0] == 'l') {
-				tempPerson.happinessChange *= -1;
+				tempHappinessAmount *= -1;
 			}
-			tempPerson.seatedNextTo[strlen(tempPerson.seatedNextTo) - 1] = '\0';
-			printf("Temp person is: %s, Temp happiness change is: %d, seated next to: %s\n", tempPerson.mainPerson, tempPerson.happinessChange, tempPerson.seatedNextTo);
-			//happinessGrid[0][0].mainPerson[0] = tempPerson.seatedNextTo[0];
-			strcpy_s(happinessGrid[mainIndex][subIndex].mainPerson, nameBuffer, tempPerson.mainPerson);
-			printf("Testing: %s\n", happinessGrid[mainIndex][subIndex].mainPerson);
-			subIndex++;
-			if (subIndex > 6) {
-				subIndex = 0;
-				mainIndex++;
+			if (head == NULL) {
+				buildHead(&head, firstPerson, secondPerson, nameBuffer, tempHappinessAmount);
+				attachToHeadSingleDirection(head, firstPerson, secondPerson, nameBuffer, tempHappinessAmount);
+			}  else { 
+				if (strcmp(firstPerson, head->name) == 0) {
+					attachToHeadSingleDirection(head, firstPerson, secondPerson, nameBuffer, tempHappinessAmount);
+				} else if (strcmp(head->name, secondPerson) == 0) {
+					createPath(head->next[getIndex(head, firstPerson)]->next, head, tempHappinessAmount);
+				} else {
+					createPath(head->next[getIndex(head, firstPerson)]->next,
+						head->next[getIndex(head, secondPerson)]->next, tempHappinessAmount);
+				}
 			}
 		}
-		//finding seating happiness
+		index = -1;
+		if (head != NULL) {
+			while (index < head->numConnections) {
+				if (index == -1) {
+					happinessAmount = findHighestWeightPathHead(head);
+				}
+				else {
+					tempHappinessAmount = findHighestWeightPathHead(head->next[index]->next);
+					if (tempHappinessAmount < happinessAmount) {
+						happinessAmount = tempHappinessAmount;
+					}
+				}
+				index++;
+			}
+		}
+		printf("Maximum happiness is: %d\n", happinessAmount);
 	}
 }

@@ -144,9 +144,10 @@
     <ClCompile Include="advcal2015p6.c" />
     <ClCompile Include="advcal2015p7.c" />
     <ClCompile Include="advcal2015p8.c" />
-    <ClCompile Include="asvcal2015p9.c" />
+    <ClCompile Include="advcal2015p9.c" />
     <ClCompile Include="collections.c" />
     <ClCompile Include="helper.c" />
+    <ClCompile Include="namedmultinodeconnector.c" />
     <ClCompile Include="rightT.c" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <Text Include="testing_input.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="namedmultinodeconnector.h" />
     <ClInclude Include="collections.h" />
     <ClInclude Include="helper.h" />
   </ItemGroup>
