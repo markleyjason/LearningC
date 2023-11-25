@@ -193,7 +193,6 @@ __int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
 	circle_return_value pathAnswer = { .name = '\0', .weight = 0 };
 
 	while (index < head->numConnections) {
-		printf("%s", head->name);
 		head->pathId = index;
 		pathAnswer = findHighestWeightPathCircle(head->next[index]->next, index, head->name, head->name);
 		pathAnswer.weight += head->next[index]->connecterWeight + head->next[getIndex(head, pathAnswer.name)]->connecterWeight;
@@ -207,14 +206,13 @@ __int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
 
 circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, __int32 pathId, char callerName[NAME_LENGTH], char headName[NAME_LENGTH]) {
 	__int32 index = 0;
-	struct circle_return_value pathAnswer = { .name = '\0', .weight = 0 };
+	circle_return_value pathAnswer = { .name = '\0', .weight = 0 };
 	__int32 highestWeight = INT_MIN;
 	char foundChild = 0;
 
 	while (index < head->numConnections) {
 		head->pathId = pathId;
 		if (head->next[index]->next->pathId != pathId) {
-			printf(", %s", head->name);
 			foundChild = 1;
 			pathAnswer = findHighestWeightPathCircle(head->next[index]->next, pathId, head->name, headName);
 			pathAnswer.weight += head->next[getIndex(head, callerName)]->connecterWeight + head->next[index]->connecterWeight;
@@ -232,7 +230,6 @@ circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, __int32 pa
 		pathAnswer.weight = head->next[index]->connecterWeight;
 		index = getIndex(head, callerName);
 		pathAnswer.weight += head->next[index]->connecterWeight;
-		printf(", %s\n", head->name);
 	}
 	return pathAnswer;
 }
