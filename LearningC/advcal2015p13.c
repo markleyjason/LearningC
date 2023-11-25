@@ -8,8 +8,8 @@
 main() {
 	FILE* fptr;
 	errno_t error;
-	char firstPerson[10] = { '\0' };
-	char secondPerson[10] = { '\0' };
+	char firstPerson[50] = { '\0' };
+	char secondPerson[50] = { '\0' };
 	char gOrL[5] = { '\0' };
 	unsigned __int32 nameBuffer = 10;
 	__int32 index = -1;
@@ -19,8 +19,8 @@ main() {
 	NamedMultiNode* head = NULL;
 
 
-	//error = fopen_s(&fptr, "input2015p13.txt", "r");
-	error = fopen_s(&fptr, "testing_input.txt", "r");
+	error = fopen_s(&fptr, "input2015p13.txt", "r");
+	//error = fopen_s(&fptr, "testing_input.txt", "r");
 
 	if (!error) {
 		//read input
@@ -48,11 +48,11 @@ main() {
 		if (head != NULL) {
 			while (index < head->numConnections) {
 				if (index == -1) {
-					happinessAmount = findHighestWeightPathHead(head);
+					happinessAmount = findHighestWeightPathHeadCircle(head);
 				}
 				else {
-					tempHappinessAmount = findHighestWeightPathHead(head->next[index]->next);
-					if (tempHappinessAmount < happinessAmount) {
+					tempHappinessAmount = findHighestWeightPathHeadCircle(head->next[index]->next);
+					if (tempHappinessAmount > happinessAmount) {
 						happinessAmount = tempHappinessAmount;
 					}
 				}
