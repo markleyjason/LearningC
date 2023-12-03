@@ -177,7 +177,7 @@ __int32 replace_head(struct Wire* head, struct WireFrame new_head, char input) {
 	struct Wire* tempNode = malloc(sizeof(struct Wire));
 	__int32 success = 0;
 	if(tempNode != NULL){
-		if (input = 0) {
+		if (input == 0) {
 			tempNode->input1 = NULL;
 			strcpy_s(tempNode->name, 3, new_head.name);
 			tempNode->input2 = NULL;

@@ -1,7 +1,7 @@
 #include "helper.h"
 #include <stdlib.h>
 
-char isDigit(char input) {
+char isDigit(const char input) {
 	__int32 ret = 0;
 	if (input - '0' >= 0 && input - '0' <= 9) {
 		ret = 1;
@@ -9,7 +9,7 @@ char isDigit(char input) {
 	return ret;
 }
 
-__int32 stoai(char* input) {
+__int32 stoai(const char* input) {
 	__int32 factor = 10;
 	__int32 sign = 1;
 	__int32 index = 0;
@@ -26,7 +26,7 @@ __int32 stoai(char* input) {
 }
 
 //Assumes all integers in the array are only a single digit (0-9)
-char* uint32arraytostring(unsigned __int32 size, unsigned __int32* start) {
+char* uint32arraytostring(const unsigned __int32 size, const unsigned __int32* start) {
 	char* array = malloc(sizeof(__int32) * size + 1);
 	unsigned __int32 index = 0;
 	if (array != NULL) {
@@ -37,15 +37,14 @@ char* uint32arraytostring(unsigned __int32 size, unsigned __int32* start) {
 		array[index] = '\0';
 	}
 	
-	
 	return array;
 }
 
-__int32 ctoai(char input) {
+__int32 ctoai(const char input) {
 	return (__int32)input - '0';
 }
 
-__int32 findMin(__int32* array, __int32 length) {
+__int32 findMin(const __int32* array, const __int32 length) {
 	int i = 0;
 	int min = INT_MAX;
 
@@ -57,9 +56,9 @@ __int32 findMin(__int32* array, __int32 length) {
 	return min;
 }
 
-__int32 findVolume(__int32 length, __int32 width, __int32 height) {
+__int32 findVolume(const __int32 length, const __int32 width, const __int32 height) {
 	return length * width * height;
 }
-__int32 findVolumeA(__int32* input) {
+__int32 findVolumeA(const __int32* input) {
 	return findVolume(input[0], input[1], input[2]);
 }

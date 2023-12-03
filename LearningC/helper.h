@@ -1,16 +1,15 @@
 #pragma once
 
-char isDigit(char);
+char isDigit(const char digit);
 
-__int32 ctoai(char);
+__int32 ctoai(const char digit);
 
-//Assumes all integers in the array are only a single digit (0-9)
-char* uint32arraytostring(unsigned __int32 size, unsigned __int32* start);
+char* uint32arraytostring(const unsigned __int32 size, const unsigned __int32* start);
 
-__int32 stoai(char* input);
+__int32 stoai(const char* input);
 
-__int32 findMin(__int32*, __int32);
+__int32 findMin(const __int32*, const __int32);
 
-__int32 findVolume(__int32, __int32, __int32);
-__int32 findVolumeA(__int32*);
+__int32 findVolume(const __int32, const __int32, const __int32);
+__int32 findVolumeA(const __int32*);
 

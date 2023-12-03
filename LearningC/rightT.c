@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define MAXLINE 1000
 
 int string_right_index(char source_string[], char search_for);
@@ -18,6 +19,14 @@ int string_right_index(char source_string[], char search_for);
 //	else {
 //		printf("Char '%c' was NOT found in the given string", search_char);
 //	}
+//}
+
+//main() {
+//	char testingArray[20] = { "0123456789" };
+//	char addition[20] = { "abcdefg" };
+//	rsize_t sizing = 19;
+//	strncpy_s(&(testingArray[5]), sizing, addition + 1, 4);
+//	printf("testingArray: %s\nsize: %d\n", testingArray, strlen(testingArray));
 //}
 
 int string_right_index(char source_string[], char search_for) {

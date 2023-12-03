@@ -4,8 +4,8 @@
 #include "helper.h"
 #include "namedmultinodeconnector.h"
 
-//advcal2015p13() {
-main() {
+advcal2015p13() {
+//main() {
 	FILE* fptr;
 	errno_t error;
 	char firstPerson[50] = { '\0' };

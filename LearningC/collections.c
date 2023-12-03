@@ -4,7 +4,7 @@
 
 static COLLECTIONS_RETURN_CODES doubleSizeIntegerArray(IntegerArray* array) {
 	__int32* tempHolder;
-	unsigned __int64 index;
+	size_t index;
 	assert(2 * array->size > array->size);
 	tempHolder = malloc(2 * array->size * sizeof(__int32));
 	if (tempHolder != NULL) {
@@ -22,7 +22,7 @@ static COLLECTIONS_RETURN_CODES doubleSizeIntegerArray(IntegerArray* array) {
 
 static COLLECTIONS_RETURN_CODES halfSizeIntegerArray(IntegerArray* array) {
 	__int32* tempHolder;
-	unsigned __int64 index;
+	size_t index;
 	tempHolder = malloc(array->size / 2 * sizeof(__int32));
 	if (tempHolder != NULL) {
 		for (index = 0; index < array->logicalSize; index++) {
@@ -37,8 +37,8 @@ static COLLECTIONS_RETURN_CODES halfSizeIntegerArray(IntegerArray* array) {
 	return SUCCESS;
 }
 
-COLLECTIONS_RETURN_CODES insertIntegerArray(IntegerArray* array, __int32 item, unsigned __int64 index) {
-	unsigned __int64 curPos;
+COLLECTIONS_RETURN_CODES insertIntegerArray(IntegerArray* array, __int32 item, size_t index) {
+	size_t curPos;
 	COLLECTIONS_RETURN_CODES returnValue;
 	assert(array->logicalSize >= index);
 	assert(array->logicalSize + 1 < array->size);
@@ -77,9 +77,9 @@ COLLECTIONS_RETURN_CODES appendIntegerArray(IntegerArray* array, __int32 item) {
 	return SUCCESS;
 }
 
-__int32 removeAtIndexIntegerArray(IntegerArray* array, unsigned __int64 index) {
+__int32 removeAtIndexIntegerArray(IntegerArray* array, size_t index) {
 	assert(index < array->logicalSize);
-	unsigned __int64 curPos;
+	size_t curPos;
 	__int32 value = array->data[index];
 	COLLECTIONS_RETURN_CODES returnVal;
 
@@ -98,7 +98,7 @@ __int32 removeAtIndexIntegerArray(IntegerArray* array, unsigned __int64 index) {
 }
 
 COLLECTIONS_RETURN_CODES removeFirstInstanceIntegerArray(IntegerArray* array, __int32 data) {
-	unsigned __int64 index = 0;
+	size_t index = 0;
 	while (index < array->logicalSize && data != array->data[index]) {
 		index++;
 	}
@@ -110,7 +110,7 @@ COLLECTIONS_RETURN_CODES removeFirstInstanceIntegerArray(IntegerArray* array, __
 	return SUCCESS;
 }
 
-IntegerArray* setupIntegerArray(unsigned __int64 size) {
+IntegerArray* setupIntegerArray(size_t size) {
 	IntegerArray* array = malloc(sizeof(IntegerArray));
 	if (array != NULL) {
 		array->size = size;

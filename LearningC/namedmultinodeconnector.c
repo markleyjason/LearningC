@@ -44,7 +44,7 @@ void createPath(NamedMultiNode* first, NamedMultiNode* second, __int32 travel) {
 
 }
 
-__int32 getIndex(NamedMultiNode* head, char* city) {
+__int32 getIndex(const NamedMultiNode* head, const char* city) {
 	__int32 index = 0;
 	__int32 count = head->numConnections;
 	while (index < count && strcmp(head->next[index]->next->name, city) != 0) {
@@ -190,7 +190,7 @@ __int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
 	__int32 index = 0;
 	__int32 curCity = 0;
 	__int32 weight = INT_MIN;
-	circle_return_value pathAnswer = { .name = '\0', .weight = 0 };
+	circle_return_value pathAnswer;
 
 	while (index < head->numConnections) {
 		head->pathId = index;
@@ -204,10 +204,10 @@ __int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
 	return weight;
 }
 
-circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, __int32 pathId, char callerName[NAME_LENGTH], char headName[NAME_LENGTH]) {
+circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, const __int32 pathId, const char callerName[NAME_LENGTH],const char headName[NAME_LENGTH]) {
 	__int32 index = 0;
-	circle_return_value pathAnswer = { .name = '\0', .weight = 0 };
-	__int32 highestWeight = INT_MIN;
+	circle_return_value pathAnswer;
+	circle_return_value bestAnswer = { .name = {'\0' }, .weight = INT_MIN };
 	char foundChild = 0;
 
 	while (index < head->numConnections) {
@@ -216,20 +216,20 @@ circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, __int32 pa
 			foundChild = 1;
 			pathAnswer = findHighestWeightPathCircle(head->next[index]->next, pathId, head->name, headName);
 			pathAnswer.weight += head->next[getIndex(head, callerName)]->connecterWeight + head->next[index]->connecterWeight;
-			if (pathAnswer.weight > highestWeight) {
-				highestWeight = pathAnswer.weight;
+			if (pathAnswer.weight > bestAnswer.weight) {
+				bestAnswer.weight = pathAnswer.weight;
+				strcpy_s(bestAnswer.name, NAME_LENGTH, pathAnswer.name);
 			}
 		}
 		index++;
 	}
 	head->pathId = -1;
-	pathAnswer.weight = highestWeight;
 	if (foundChild == 0) {
-		strcpy_s(pathAnswer.name, NAME_LENGTH, head->name);
+		strcpy_s(bestAnswer.name, NAME_LENGTH, head->name);
 		index = getIndex(head, headName);
-		pathAnswer.weight = head->next[index]->connecterWeight;
+		bestAnswer.weight = head->next[index]->connecterWeight;
 		index = getIndex(head, callerName);
-		pathAnswer.weight += head->next[index]->connecterWeight;
+		bestAnswer.weight += head->next[index]->connecterWeight;
 	}
-	return pathAnswer;
+	return bestAnswer;
 }

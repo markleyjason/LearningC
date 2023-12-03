@@ -147,6 +147,7 @@
       <ConformanceMode>true</ConformanceMode>
       <OmitFramePointers>
       </OmitFramePointers>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,13 +168,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -183,11 +185,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="advcal2014p7t2.c" />
+    <ClCompile Include="advcal2015p17.c" />
+    <ClCompile Include="advcal2015p18.c" />
+    <ClCompile Include="advcal2015p7t2.c" />
     <ClCompile Include="advcal2015p10.c" />
     <ClCompile Include="advcal2015p11.c" />
     <ClCompile Include="advcal2015p12.c" />
     <ClCompile Include="advcal2015p13.c" />
+    <ClCompile Include="advcal2015p14.c" />
+    <ClCompile Include="advcal2015p15.c" />
+    <ClCompile Include="advcal2015p16.c" />
     <ClCompile Include="advcal2015p3.c" />
     <ClCompile Include="advcal2015p2.c" />
     <ClCompile Include="advcal2015p1.c" />
@@ -197,14 +204,23 @@
     <ClCompile Include="advcal2015p7.c" />
     <ClCompile Include="advcal2015p8.c" />
     <ClCompile Include="advcal2015p9.c" />
+    <ClCompile Include="asvcal2015p19.c" />
+    <ClCompile Include="binarysearchtreestring.c" />
     <ClCompile Include="collections.c" />
     <ClCompile Include="helper.c" />
     <ClCompile Include="namedmultinodeconnector.c" />
     <ClCompile Include="rightT.c" />
+    <ClCompile Include="stringholder.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2015p12.txt" />
     <Text Include="input2015p13.txt" />
+    <Text Include="input2015p14.txt" />
+    <Text Include="input2015p15.txt" />
+    <Text Include="input2015p16.txt" />
+    <Text Include="input2015p17.txt" />
+    <Text Include="input2015p18.txt" />
+    <Text Include="input2015p19.txt" />
     <Text Include="input2015p9.txt" />
     <Text Include="input2015p1.txt" />
     <Text Include="input2015p2.txt" />
@@ -213,12 +229,15 @@
     <Text Include="input2015p6.txt" />
     <Text Include="input2015p7.txt" />
     <Text Include="input2015p8.txt" />
+    <Text Include="random_work.txt" />
     <Text Include="testing_input.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarysearchtreestring.h" />
     <ClInclude Include="namedmultinodeconnector.h" />
     <ClInclude Include="collections.h" />
     <ClInclude Include="helper.h" />
+    <ClInclude Include="stringholder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
