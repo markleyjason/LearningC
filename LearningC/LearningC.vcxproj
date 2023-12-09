@@ -209,6 +209,8 @@
     <ClCompile Include="advcal2023p3.c" />
     <ClCompile Include="advcal2023p4.c" />
     <ClCompile Include="advcal2023p5.c" />
+    <ClCompile Include="advcal2023p6.c" />
+    <ClCompile Include="advcal2023p7.c" />
     <ClCompile Include="asvcal2015p19.c" />
     <ClCompile Include="binarysearchtreestring.c" />
     <ClCompile Include="collections.c" />
@@ -240,6 +242,7 @@
     <Text Include="input2023p2.txt" />
     <Text Include="input2023p3.txt" />
     <Text Include="input2023p4.txt" />
+    <Text Include="input2023p6.txt" />
     <Text Include="random_work.txt" />
     <Text Include="testing_input.txt" />
   </ItemGroup>

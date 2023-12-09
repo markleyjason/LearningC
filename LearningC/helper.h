@@ -10,6 +10,7 @@ int32_t ctoai(const char digit);
 char* uint32arraytostring(const int32_t size, const int32_t* start);
 
 int32_t stoai(const char* input);
+
 uint32_t stoaui(const char* input);
 
 __int64 stoai64(const char* input);

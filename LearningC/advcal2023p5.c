@@ -3,24 +3,28 @@
 #include <string.h>
 #include <stdint.h>
 #include "helper.h"
+#include "collections.h"
 
 #define LINEBUFFER 210
 #define RANGEINDEX 2
 #define SOURCEINDEX 1
 #define DESTINDEX 0
 
-uint32_t ranges[50][3] = { {0} };
+static uint32_t ranges[50][3] = { {0} };
+static uint16_t numRanges = 0;
 
-static void transform(const int32_t numRanges, const int32_t range[20][3],const int32_t numSeeds, int32_t* seeds);
+static IntegerArray* part2Array;
 
+static void transform(const int32_t numSeeds, int32_t* seeds);
+static void transformPart2();
 
-int main() {
+static int adv2023p6(){
+//int main() {
 	FILE* fptr;
 	errno_t error;
 	uint32_t seeds[20] = { 0 };
 	uint32_t index = 0;
 	uint16_t numSeeds = 0;
-	uint16_t numRanges = 0;
 	uint32_t rmIndex = 0;
 	uint16_t rsIndex = 0;
 	char line[LINEBUFFER] = { '\0' };
@@ -28,6 +32,7 @@ int main() {
 	char* cont = NULL;
 	char* returnVal;
 
+	part2Array = setupIntegerArray(200);
 
 	error = fopen_s(&fptr, "input2023p5.txt", "r");
 	//error = fopen_s(&fptr, "testing_input.txt", "r");
@@ -40,6 +45,7 @@ int main() {
 			token = strtok_s(line, " ", &cont);
 			while ((token = strtok_s(NULL, " \n", &cont)) != NULL) {
 				seeds[numSeeds] = stoaui(token);
+				appendIntegerArray(part2Array, stoai(token));
 				numSeeds++;
 			}
 			cont = NULL;
@@ -61,15 +67,20 @@ int main() {
 					numRanges++;
 					returnVal = fgets(line, LINEBUFFER, fptr);
 				}
-				printf("Transformations:\n");
+				/*printf("Transformations:\n");
 				for (index = 0; index < numRanges; index++) {
 					printf("%lu %lu %lu\n", ranges[index][DESTINDEX], ranges[index][SOURCEINDEX], ranges[index][RANGEINDEX]);
-				}
-				transform(numRanges, ranges, numSeeds, seeds);
-				printf("Seeds transformed:\n");
+				}*/
+				transform(numSeeds, seeds);
+				transformPart2();
+				/*printf("Seeds transformed part 1:\n");
 				for (index = 0; index < numSeeds; index++) {
 					printf("%lu\n", seeds[index]);
 				}
+				printf("Seeds transformed part 2:\n");
+				for (index = 0; index < part2Array->logicalSize; index++) {
+					printf("%ld\n", part2Array->data[index]);
+				}*/
 			}
 			rmIndex = INT_MAX;
 			for (index = 0; index < numSeeds; index++) {
@@ -77,7 +88,14 @@ int main() {
 					rmIndex = seeds[index];
 				}
 			}
-			printf("Next seed: %d", rmIndex);
+			printf("Next seed: %d\n", rmIndex);
+			rmIndex = UINT32_MAX;
+			for (index = 0; index < part2Array->logicalSize; index+=2) {
+				if (rmIndex > part2Array->data[index]) {
+					rmIndex = part2Array->data[index];
+				}
+			}
+			printf("Next seed part 2: %d\n", rmIndex);
 		} else {
 			printf("Failed to get the first line\n");
 			return -1;
@@ -91,20 +109,59 @@ int main() {
 	return 1;
 }
 
-static void transform(const int32_t numRanges, const int32_t range[20][3], const int32_t numSeeds, int32_t* seeds) {
+static void transform(const int32_t numSeeds, int32_t* seeds) {
 	int32_t index = 0;
 	int32_t rmIndex = 0;
 	char switched = 0;
 
 	for (index = 0; index < numSeeds; index++) {
 		while (switched == 0 && rmIndex < numRanges) {
-			if (seeds[index] >= range[rmIndex][SOURCEINDEX] && seeds[index] < range[rmIndex][SOURCEINDEX] + range[rmIndex][RANGEINDEX]) {
-				seeds[index] = range[rmIndex][DESTINDEX] + range[rmIndex][RANGEINDEX] - (range[rmIndex][SOURCEINDEX] + range[rmIndex][RANGEINDEX] - seeds[index]);
+			if (seeds[index] >= ranges[rmIndex][SOURCEINDEX] && seeds[index] < ranges[rmIndex][SOURCEINDEX] + ranges[rmIndex][RANGEINDEX]) {
+				seeds[index] = ranges[rmIndex][DESTINDEX] + ranges[rmIndex][RANGEINDEX] - (ranges[rmIndex][SOURCEINDEX] + ranges[rmIndex][RANGEINDEX] - seeds[index]);
 				switched = 1;
 			}
 			rmIndex++;
 		}
 		switched = 0;
 		rmIndex = 0;
+	}
+}
+
+static void transformPart2() {
+	size_t index = 0;
+	int16_t rmIndex = 0;
+	char switched = 0;
+	int32_t startNumber = 0;
+	int32_t newRange = 0;
+
+	for (index = 0; index < part2Array->logicalSize; index += 2) {
+		for (rmIndex = 0; rmIndex < numRanges; rmIndex++) {
+			if (ranges[rmIndex][SOURCEINDEX] < part2Array->data[index] && part2Array->data[index] < (ranges[rmIndex][SOURCEINDEX] + ranges[rmIndex][RANGEINDEX])) {
+				if (part2Array->data[index] + part2Array->data[index + 1] > (part2Array->data[index] + ranges[rmIndex][RANGEINDEX])) {
+					newRange = part2Array->data[index] + part2Array->data[index + 1] - ranges[rmIndex][SOURCEINDEX] - ranges[rmIndex][RANGEINDEX];
+					startNumber = part2Array->data[index] + part2Array->data[index + 1] - ranges[rmIndex][RANGEINDEX] - 1;
+					part2Array->data[index + 1] = part2Array->data[index + 1] - newRange;
+					insertIntegerArray(part2Array, startNumber, index + 2);
+					insertIntegerArray(part2Array, newRange, index + 3);
+				}
+			} else if (ranges[rmIndex][SOURCEINDEX] > part2Array->data[index] && (part2Array->data[index] + part2Array->data[index + 1]) > ranges[rmIndex][SOURCEINDEX]) {
+				newRange = part2Array->data[index] + part2Array->data[index + 1] - ranges[rmIndex][SOURCEINDEX];
+				startNumber = ranges[rmIndex][SOURCEINDEX];
+				part2Array->data[index + 1] = part2Array->data[index + 1] - newRange;
+				insertIntegerArray(part2Array, startNumber, index + 2);
+				insertIntegerArray(part2Array, newRange, index + 3);
+			}
+		}
+	}
+	for (index = 0; index < part2Array->logicalSize; index+=2) {
+		switched = 0;
+		rmIndex = 0;
+		while (switched == 0 && rmIndex < numRanges) {
+			if (part2Array->data[index] >= ranges[rmIndex][SOURCEINDEX] && part2Array->data[index] < ranges[rmIndex][SOURCEINDEX] + ranges[rmIndex][RANGEINDEX]) {
+				part2Array->data[index] = ranges[rmIndex][DESTINDEX] + ranges[rmIndex][RANGEINDEX] - (ranges[rmIndex][SOURCEINDEX] + ranges[rmIndex][RANGEINDEX] - part2Array->data[index]);
+				switched = 1;
+			}
+			rmIndex++;
+		}
 	}
 }

@@ -3,10 +3,10 @@
 #include <assert.h>
 
 static COLLECTIONS_RETURN_CODES doubleSizeIntegerArray(IntegerArray* array) {
-	__int32* tempHolder;
+	int32_t* tempHolder;
 	size_t index;
 	assert(2 * array->size > array->size);
-	tempHolder = malloc(2 * array->size * sizeof(__int32));
+	tempHolder = malloc(2 * array->size * sizeof(int32_t));
 	if (tempHolder != NULL) {
 		for (index = 0; index < array->logicalSize; index++) {
 			tempHolder[index] = array->data[index];
@@ -21,9 +21,9 @@ static COLLECTIONS_RETURN_CODES doubleSizeIntegerArray(IntegerArray* array) {
 }
 
 static COLLECTIONS_RETURN_CODES halfSizeIntegerArray(IntegerArray* array) {
-	__int32* tempHolder;
+	int32_t* tempHolder;
 	size_t index;
-	tempHolder = malloc(array->size / 2 * sizeof(__int32));
+	tempHolder = malloc(array->size / 2 * sizeof(int32_t));
 	if (tempHolder != NULL) {
 		for (index = 0; index < array->logicalSize; index++) {
 			tempHolder[index] = array->data[index];
@@ -37,7 +37,7 @@ static COLLECTIONS_RETURN_CODES halfSizeIntegerArray(IntegerArray* array) {
 	return SUCCESS;
 }
 
-COLLECTIONS_RETURN_CODES insertIntegerArray(IntegerArray* array, __int32 item, size_t index) {
+COLLECTIONS_RETURN_CODES insertIntegerArray(IntegerArray* array, int32_t item, size_t index) {
 	size_t curPos;
 	COLLECTIONS_RETURN_CODES returnValue;
 	assert(array->logicalSize >= index);
@@ -59,7 +59,7 @@ COLLECTIONS_RETURN_CODES insertIntegerArray(IntegerArray* array, __int32 item, s
 	return SUCCESS;
 }
 
-COLLECTIONS_RETURN_CODES appendIntegerArray(IntegerArray* array, __int32 item) {
+COLLECTIONS_RETURN_CODES appendIntegerArray(IntegerArray* array, int32_t item) {
 	COLLECTIONS_RETURN_CODES returnValue;
 	assert(array->logicalSize + 1 < array->size);
 
@@ -77,10 +77,10 @@ COLLECTIONS_RETURN_CODES appendIntegerArray(IntegerArray* array, __int32 item) {
 	return SUCCESS;
 }
 
-__int32 removeAtIndexIntegerArray(IntegerArray* array, size_t index) {
+int32_t removeAtIndexIntegerArray(IntegerArray* array, size_t index) {
 	assert(index < array->logicalSize);
 	size_t curPos;
-	__int32 value = array->data[index];
+	int32_t value = array->data[index];
 	COLLECTIONS_RETURN_CODES returnVal;
 
 	for (curPos = index; curPos < array->logicalSize; curPos++) {
@@ -97,7 +97,7 @@ __int32 removeAtIndexIntegerArray(IntegerArray* array, size_t index) {
 	return value;
 }
 
-COLLECTIONS_RETURN_CODES removeFirstInstanceIntegerArray(IntegerArray* array, __int32 data) {
+COLLECTIONS_RETURN_CODES removeFirstInstanceIntegerArray(IntegerArray* array, int32_t data) {
 	size_t index = 0;
 	while (index < array->logicalSize && data != array->data[index]) {
 		index++;
@@ -115,7 +115,7 @@ IntegerArray* setupIntegerArray(size_t size) {
 	if (array != NULL) {
 		array->size = size;
 		array->logicalSize = 0;
-		array->data = malloc(size * sizeof(__int32));
+		array->data = malloc(size * sizeof(int32_t));
 		if (array->data != NULL) {
 			return array;
 		} else {
