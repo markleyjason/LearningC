@@ -1,6 +1,7 @@
 #pragma once
 #include "stringholder.h"
 #include <stdio.h>
+#include <crtdbg.h>
 
 typedef enum NODE_INFORMATION {
 	BLACK,
@@ -31,3 +32,4 @@ RBTreeStringNode* removeRBTreeStringNode(RBTreeString* tree, char* information);
 void printRBSAtringStrings(const RBTreeString* tree);
 void printRBSAtringStringsFile(RBTreeString* tree, FILE* wfptr);
 void destroyRBStringArrayNode(RBTreeStringNode** node);
+void destroyRBTree(RBTreeString* tree);

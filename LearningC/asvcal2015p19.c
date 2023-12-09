@@ -1,6 +1,8 @@
+#define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <crtdbg.h>
 #include "stringholder.h"
 #include "binarysearchtreestring.h"
 
@@ -21,10 +23,10 @@ struct AdvLetterMapping {
 	struct Mappings keyValues[REPLACESIZE];
 };
 
-//void adv2015p19(){
-main() {
+__int32 adv2015p19(){
+//main() {
 	FILE* fptr;
-	FILE* wfptr;
+	//FILE* wfptr;
 	errno_t error;
 	char tempString[TEMPSIZE] = { '\0' };
 	char tempChar = '\0';
@@ -41,12 +43,17 @@ main() {
 	RBTreeStringNode* tempNode = NULL;
 	StringArray* tempStringArray;
 	__int32 tempCount = 0;
+	unsigned __int32 yCount = 0;
+	unsigned __int32 terminalCount = 0;
+	unsigned __int32 nonterminalCount = 0;
+	char lastA = 0;
 	
 	if (createBlankStringArray(&mainString) == 0) {
 		return -1;
 	}
 
 	error = fopen_s(&fptr, "input2015p19.txt", "r");
+	
 	//error = fopen_s(&fptr, "testing_input.txt", "r");
 
 	if (!error) {
@@ -79,22 +86,42 @@ main() {
 		}
 		tempChar = fgetc(fptr);
 		while (tempChar != '\n' && tempChar != EOF) {
+			if (tempChar == 'y' || tempChar == 'Y') {
+				yCount++;
+			} else if (tempChar == 'R') {
+				terminalCount++;
+			} else if (tempChar == 'r' && lastA == 1) {
+				terminalCount++;
+			}
+			if (tempChar == 'A') {
+				lastA = 1;
+			} else {
+				lastA = 0;
+			}
 			if (appendChar(&mainString, tempChar) == 0) {
 				return -1;
 			}
 			tempChar = fgetc(fptr);
 		}
 		fclose(fptr);
-		
+
 		for (index = 0; index < mainString.logicSize; index++) {
 			tempChar = mainString.string[index];
 			sIndex = 0;
 			s2Index = 0;
+			if (index == 15) {
+				printf("here\n");
+			}
+			lastA = 0;
 			while (sIndex < NUMBERMAPPINGS && s2Index == 0) {
 				if (allMaps[sIndex].letter == tempChar) {
 					for (s2Index = 0; s2Index < allMaps[sIndex].size; s2Index++) {
 						if (allMaps[sIndex].keyValues[s2Index].key[1] != '\0') {
 							if (allMaps[sIndex].keyValues[s2Index].key[1] == mainString.string[index + 1]) {
+								if (lastA == 0) {
+									nonterminalCount++;
+									lastA = 1;
+								}
 								tempStringArray = createBlankStringArrayStruct();
 								if (tempStringArray != NULL) {
 									appendSubstring(tempStringArray, mainString.string, 0, index);
@@ -109,6 +136,10 @@ main() {
 								}
 							}
 						} else {
+							if (lastA == 0) {
+								nonterminalCount++;
+								lastA = 1;
+							}
 							tempStringArray = createBlankStringArrayStruct();
 							if (tempStringArray != NULL) {
 								appendSubstring(tempStringArray, mainString.string, 0, index);
@@ -127,14 +158,11 @@ main() {
 				sIndex++;
 			}
 		}
-		error = fopen_s(&wfptr, "output.txt", "w");
-		if (!error) {
-			printRBSAtringStringsFile(&tree, wfptr);
-			fclose(wfptr);
-		}
-		printf("%s\n", mainString.string);
-		printRBSAtringStrings(&tree);
-		printf("inserted count: %d\n", insertedCount);
+
+		printf("inserted count: %d\nnonterminal count: %d\nterminal count: %d\ny Count: %d\n", insertedCount, nonterminalCount, terminalCount, yCount);
+		printf("Steps? %d\n", nonterminalCount - yCount - 1);
+		destroyRBTree(&tree);
+		_CrtDumpMemoryLeaks();
 		return 0;
 		
 	}

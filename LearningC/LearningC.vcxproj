@@ -204,6 +204,11 @@
     <ClCompile Include="advcal2015p7.c" />
     <ClCompile Include="advcal2015p8.c" />
     <ClCompile Include="advcal2015p9.c" />
+    <ClCompile Include="advcal2023p1.c" />
+    <ClCompile Include="advcal2023p2.c" />
+    <ClCompile Include="advcal2023p3.c" />
+    <ClCompile Include="advcal2023p4.c" />
+    <ClCompile Include="advcal2023p5.c" />
     <ClCompile Include="asvcal2015p19.c" />
     <ClCompile Include="binarysearchtreestring.c" />
     <ClCompile Include="collections.c" />
@@ -211,6 +216,7 @@
     <ClCompile Include="namedmultinodeconnector.c" />
     <ClCompile Include="rightT.c" />
     <ClCompile Include="stringholder.c" />
+    <ClCompile Include="testing.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2015p12.txt" />
@@ -229,6 +235,11 @@
     <Text Include="input2015p6.txt" />
     <Text Include="input2015p7.txt" />
     <Text Include="input2015p8.txt" />
+    <Text Include="input2023p5.txt" />
+    <Text Include="input2023p1.txt" />
+    <Text Include="input2023p2.txt" />
+    <Text Include="input2023p3.txt" />
+    <Text Include="input2023p4.txt" />
     <Text Include="random_work.txt" />
     <Text Include="testing_input.txt" />
   </ItemGroup>
@@ -238,6 +249,9 @@
     <ClInclude Include="collections.h" />
     <ClInclude Include="helper.h" />
     <ClInclude Include="stringholder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

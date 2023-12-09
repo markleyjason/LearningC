@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{6247611e-6790-4250-a9fb-9474a04758d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="advcal2015p1.c">
@@ -93,30 +96,91 @@
     <ClCompile Include="binarysearchtreestring.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="testing_input.txt" />
+    <Text Include="random_work.txt" />
     <Text Include="input2015p1.txt">
-      <Filter>Source Files</Filter>
+      <Filter>input</Filter>
     </Text>
     <Text Include="input2015p2.txt">
-      <Filter>Source Files</Filter>
+      <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p3.txt" />
-    <Text Include="testing_input.txt" />
-    <Text Include="input2015p5.txt" />
-    <Text Include="input2015p6.txt" />
-    <Text Include="input2015p7.txt" />
-    <Text Include="input2015p8.txt" />
-    <Text Include="input2015p9.txt" />
-    <Text Include="input2015p12.txt" />
-    <Text Include="input2015p13.txt" />
-    <Text Include="input2015p14.txt" />
-    <Text Include="input2015p15.txt" />
-    <Text Include="input2015p16.txt" />
-    <Text Include="random_work.txt" />
-    <Text Include="input2015p17.txt" />
-    <Text Include="input2015p18.txt" />
-    <Text Include="input2015p19.txt" />
+    <Text Include="input2015p3.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p5.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p6.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p7.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p8.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p9.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p12.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p13.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p14.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p15.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p16.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p17.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p18.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p19.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p1.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p2.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p3.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p4.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p5.txt">
+      <Filter>input</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper.h">
@@ -134,5 +198,8 @@
     <ClInclude Include="binarysearchtreestring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

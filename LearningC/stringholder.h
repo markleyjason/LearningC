@@ -1,5 +1,6 @@
 #pragma once
 #include <stdlib.h>
+#include <crtdbg.h>
 #define STRINGSTARTERSIZE 16
 
 typedef struct StringArray {

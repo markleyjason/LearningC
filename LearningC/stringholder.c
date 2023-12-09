@@ -1,7 +1,9 @@
+#define _CRTDBG_MAP_ALLOC
 #include "stringholder.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <crtdbg.h>
 
 StringArray* createBlankStringArrayStruct() {
 	StringArray* newArray = (StringArray*)malloc(sizeof(StringArray));
@@ -64,11 +66,9 @@ __int32 destroyStringArray(StringArray** stringArray) {
 }
 
 __int32 increaseMemSize(StringArray* stringArray) {
-	char* tempString = (char*)malloc(stringArray->memSize * 2 * sizeof(char));
+	char* tempString = realloc(stringArray->string, stringArray->memSize * 2 * sizeof(char));
 	if (tempString != NULL) {
 		stringArray->memSize *= 2;
-		strcpy_s(tempString, stringArray->memSize - 1, stringArray->string);
-		free(stringArray->string);
 		stringArray->string = tempString;
 	} else {
 		return 0;
@@ -77,12 +77,10 @@ __int32 increaseMemSize(StringArray* stringArray) {
 }
 
 __int32 increaseMemSizeNewSize(StringArray* stringArray, size_t newSize) {
-	char* tempString = (char*)malloc(newSize * sizeof(char));
+	char* tempString = realloc(stringArray->string, newSize * sizeof(char));
 	if (tempString != NULL) {
 		stringArray->memSize = newSize;
-		strcpy_s(tempString, stringArray->memSize - 1, stringArray->string);
-		free(stringArray->string);
-		stringArray->string = tempString;
+		stringArray->string = tempString; 
 	} else {
 		return 0;
 	}

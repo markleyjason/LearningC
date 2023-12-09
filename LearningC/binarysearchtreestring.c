@@ -3,12 +3,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <crtdbg.h>
 
 static void balanceTree(RBTreeString* tree, RBTreeStringNode* currentNode);
 static void leftRotation(RBTreeString* tree, RBTreeStringNode* currentNode);
 static void rightRotation(RBTreeString* tree, RBTreeStringNode* currentNode);
 static void printNode(RBTreeStringNode* node);
 static void printNodeFile(RBTreeStringNode* node, FILE* wfptr);
+static void destroyNodeRec(RBTreeStringNode** node);
 
 RBTreeStringNode* createRBStringNodeInformation(StringArray* information) {
 	RBTreeStringNode* nextNode = (RBTreeStringNode*)malloc(sizeof(RBTreeStringNode));
@@ -33,6 +35,7 @@ RBTreeStringNode* createRBStringNodeBlank() {
 	}
 	return nextNode;
 }
+
 __int32 insertRBTreeStringNode(RBTreeString* tree, RBTreeStringNode* newNode) {
 	char inserted = 0;
 	__int32 sort;
@@ -58,12 +61,12 @@ __int32 insertRBTreeStringNode(RBTreeString* tree, RBTreeStringNode* newNode) {
 			sort = strcmp(current->string->string, newNode->string->string);
 			if (sort < 0) {
 				newNode->parent = current;
-				newNode->side = LEFT;
-				current = current->left;
-			} else if (sort > 0) {
-				newNode->parent = current;
 				newNode->side = RIGHT;
 				current = current->right;
+			} else if (sort > 0) {
+				newNode->parent = current;
+				newNode->side = LEFT;
+				current = current->left;
 			} else if (sort == 0) {
 				return 0;
 			}
@@ -169,6 +172,18 @@ void destroyRBStringArrayNode(RBTreeStringNode** node) {
 	*node = NULL;
 }
 
+void destroyRBTree(RBTreeString* tree) {
+	if (tree->head != NULL) {
+		if (tree->head->left != NULL) {
+			destroyNodeRec(&(tree->head->left));
+		}
+		if (tree->head->right != NULL) {
+			destroyNodeRec(&(tree->head->right));
+		}
+		destroyRBStringArrayNode(&(tree->head));
+	}
+}
+
 static void leftRotation(RBTreeString* tree, RBTreeStringNode* currentNode) {
 	RBTreeStringNode* newHead = currentNode->right;
 	RBTreeStringNode* switchingLeft = NULL;
@@ -190,6 +205,7 @@ static void leftRotation(RBTreeString* tree, RBTreeStringNode* currentNode) {
 	if (switchingLeft != NULL) {
 		currentNode->right = switchingLeft;
 		switchingLeft->side = RIGHT;
+		switchingLeft->parent = currentNode;
 	} else {
 		currentNode->right = NULL;
 	}
@@ -216,6 +232,7 @@ static void rightRotation(RBTreeString* tree, RBTreeStringNode* currentNode) {
 	if (switchingRight != NULL) {
 		currentNode->left = switchingRight;
 		switchingRight->side = LEFT;
+		switchingRight->parent = currentNode;
 	} else {
 		currentNode->left = NULL;
 	}
@@ -239,4 +256,14 @@ static void printNodeFile(RBTreeStringNode* node, FILE* fwptr) {
 	if (node->right != NULL) {
 		printNodeFile(node->right, fwptr);
 	}
+}
+
+static void destroyNodeRec(RBTreeStringNode** node) {
+	if ((*node)->left != NULL) {
+		destroyNodeRec(&((*node)->left));
+	}
+	if ((*node)->right != NULL) {
+		destroyNodeRec(&((*node)->right));
+	}
+	destroyRBStringArrayNode(node);
 }
