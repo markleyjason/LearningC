@@ -106,7 +106,7 @@ static int adv2023p6(){
 		printf("Failed to open file\n");
 		return -1;
 	}
-	return 1;
+	return 0;
 }
 
 static void transform(const int32_t numSeeds, int32_t* seeds) {

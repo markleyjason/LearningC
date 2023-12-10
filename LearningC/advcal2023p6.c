@@ -81,5 +81,5 @@ static int adv2023p6() {
 		printf("Failed to open file");
 		return -1;
 	}
-	return 1;
+	return 0;
 }
