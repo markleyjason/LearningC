@@ -18,76 +18,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="advcal2015p1.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="rightT.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="helper.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2015p3.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p4.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p5.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p6.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p7.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p8.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p9.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p10.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="collections.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2015p11.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p12.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p13.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="namedmultinodeconnector.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p7t2.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p14.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p15.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p16.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p17.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="advcal2015p18.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="asvcal2015p19.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stringholder.c">
@@ -99,95 +39,188 @@
     <ClCompile Include="testing.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p1.c">
+    <ClCompile Include="advcal2023p12.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p2.c">
+    <ClCompile Include="src\advcal2015p17.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p3.c">
+    <ClCompile Include="src\advcal2015p18.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p4.c">
+    <ClCompile Include="src\advcal2015p7t2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p5.c">
+    <ClCompile Include="src\advcal2015p10.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p6.c">
+    <ClCompile Include="src\advcal2015p11.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="advcal2023p7.c">
+    <ClCompile Include="src\advcal2015p12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2023p9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\advcal2015p19.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="testing_input.txt" />
     <Text Include="random_work.txt" />
-    <Text Include="input2015p1.txt">
+    <Text Include="input\input2015p1.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p2.txt">
+    <Text Include="input\input2015p2.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p3.txt">
+    <Text Include="input\input2015p3.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p5.txt">
+    <Text Include="input\input2015p5.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p6.txt">
+    <Text Include="input\input2015p6.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p7.txt">
+    <Text Include="input\input2015p7.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p8.txt">
+    <Text Include="input\input2015p8.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p9.txt">
+    <Text Include="input\input2015p9.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p12.txt">
+    <Text Include="input\input2015p12.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p13.txt">
+    <Text Include="input\input2015p13.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p14.txt">
+    <Text Include="input\input2015p14.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p15.txt">
+    <Text Include="input\input2015p15.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p16.txt">
+    <Text Include="input\input2015p16.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p17.txt">
+    <Text Include="input\input2015p17.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p18.txt">
+    <Text Include="input\input2015p18.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2015p19.txt">
+    <Text Include="input\input2015p19.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p1.txt">
+    <Text Include="input\input2023p1.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p2.txt">
+    <Text Include="input\input2023p2.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p3.txt">
+    <Text Include="input\input2023p3.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p4.txt">
+    <Text Include="input\input2023p4.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p5.txt">
+    <Text Include="input\input2023p5.txt">
       <Filter>input</Filter>
     </Text>
-    <Text Include="input2023p6.txt" />
+    <Text Include="input\input2023p6.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input\input2023p7.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input\input2023p8.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input\input2023p9.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input\input2023p10.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input\input2023p11.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p12.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper.h">

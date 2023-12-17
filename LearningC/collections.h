@@ -25,4 +25,7 @@ COLLECTIONS_RETURN_CODES removeFirstInstanceIntegerArray(IntegerArray* array, in
 
 IntegerArray* setupIntegerArray(size_t size);
 
+COLLECTIONS_RETURN_CODES setupIntegerArrayPassing(IntegerArray* array, size_t size);
+
 COLLECTIONS_RETURN_CODES destroyIntegerArray(IntegerArray* array);
+COLLECTIONS_RETURN_CODES clearArray(IntegerArray* array, size_t newSize);

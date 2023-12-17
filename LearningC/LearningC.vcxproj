@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -58,6 +58,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>true</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='testing|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -185,33 +186,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="advcal2015p17.c" />
-    <ClCompile Include="advcal2015p18.c" />
-    <ClCompile Include="advcal2015p7t2.c" />
-    <ClCompile Include="advcal2015p10.c" />
-    <ClCompile Include="advcal2015p11.c" />
-    <ClCompile Include="advcal2015p12.c" />
-    <ClCompile Include="advcal2015p13.c" />
-    <ClCompile Include="advcal2015p14.c" />
-    <ClCompile Include="advcal2015p15.c" />
-    <ClCompile Include="advcal2015p16.c" />
-    <ClCompile Include="advcal2015p3.c" />
-    <ClCompile Include="advcal2015p2.c" />
-    <ClCompile Include="advcal2015p1.c" />
-    <ClCompile Include="advcal2015p4.c" />
-    <ClCompile Include="advcal2015p5.c" />
-    <ClCompile Include="advcal2015p6.c" />
-    <ClCompile Include="advcal2015p7.c" />
-    <ClCompile Include="advcal2015p8.c" />
-    <ClCompile Include="advcal2015p9.c" />
-    <ClCompile Include="advcal2023p1.c" />
-    <ClCompile Include="advcal2023p2.c" />
-    <ClCompile Include="advcal2023p3.c" />
-    <ClCompile Include="advcal2023p4.c" />
-    <ClCompile Include="advcal2023p5.c" />
-    <ClCompile Include="advcal2023p6.c" />
-    <ClCompile Include="advcal2023p7.c" />
-    <ClCompile Include="asvcal2015p19.c" />
+    <ClCompile Include="advcal2023p12.c" />
+    <ClCompile Include="src\advcal2015p17.c" />
+    <ClCompile Include="src\advcal2015p18.c" />
+    <ClCompile Include="src\advcal2015p7t2.c" />
+    <ClCompile Include="src\advcal2015p10.c" />
+    <ClCompile Include="src\advcal2015p11.c" />
+    <ClCompile Include="src\advcal2015p12.c" />
+    <ClCompile Include="src\advcal2015p13.c" />
+    <ClCompile Include="src\advcal2015p14.c" />
+    <ClCompile Include="src\advcal2015p15.c" />
+    <ClCompile Include="src\advcal2015p16.c" />
+    <ClCompile Include="src\advcal2015p3.c" />
+    <ClCompile Include="src\advcal2015p2.c" />
+    <ClCompile Include="src\advcal2015p1.c" />
+    <ClCompile Include="src\advcal2015p4.c" />
+    <ClCompile Include="src\advcal2015p5.c" />
+    <ClCompile Include="src\advcal2015p6.c" />
+    <ClCompile Include="src\advcal2015p7.c" />
+    <ClCompile Include="src\advcal2015p8.c" />
+    <ClCompile Include="src\advcal2015p9.c" />
+    <ClCompile Include="src\advcal2023p1.c" />
+    <ClCompile Include="src\advcal2023p10.c" />
+    <ClCompile Include="src\advcal2023p11.c" />
+    <ClCompile Include="src\advcal2023p2.c" />
+    <ClCompile Include="src\advcal2023p3.c" />
+    <ClCompile Include="src\advcal2023p4.c" />
+    <ClCompile Include="src\advcal2023p5.c" />
+    <ClCompile Include="src\advcal2023p6.c" />
+    <ClCompile Include="src\advcal2023p7.c" />
+    <ClCompile Include="src\advcal2023p8.c" />
+    <ClCompile Include="src\advcal2023p9.c" />
+    <ClCompile Include="src\advcal2015p19.c" />
     <ClCompile Include="binarysearchtreestring.c" />
     <ClCompile Include="collections.c" />
     <ClCompile Include="helper.c" />
@@ -221,28 +227,34 @@
     <ClCompile Include="testing.c" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input2015p12.txt" />
-    <Text Include="input2015p13.txt" />
-    <Text Include="input2015p14.txt" />
-    <Text Include="input2015p15.txt" />
-    <Text Include="input2015p16.txt" />
-    <Text Include="input2015p17.txt" />
-    <Text Include="input2015p18.txt" />
-    <Text Include="input2015p19.txt" />
-    <Text Include="input2015p9.txt" />
-    <Text Include="input2015p1.txt" />
-    <Text Include="input2015p2.txt" />
-    <Text Include="input2015p3.txt" />
-    <Text Include="input2015p5.txt" />
-    <Text Include="input2015p6.txt" />
-    <Text Include="input2015p7.txt" />
-    <Text Include="input2015p8.txt" />
-    <Text Include="input2023p5.txt" />
-    <Text Include="input2023p1.txt" />
-    <Text Include="input2023p2.txt" />
-    <Text Include="input2023p3.txt" />
-    <Text Include="input2023p4.txt" />
-    <Text Include="input2023p6.txt" />
+    <Text Include="input2023p12.txt" />
+    <Text Include="input\input2015p12.txt" />
+    <Text Include="input\input2015p13.txt" />
+    <Text Include="input\input2015p14.txt" />
+    <Text Include="input\input2015p15.txt" />
+    <Text Include="input\input2015p16.txt" />
+    <Text Include="input\input2015p17.txt" />
+    <Text Include="input\input2015p18.txt" />
+    <Text Include="input\input2015p19.txt" />
+    <Text Include="input\input2015p9.txt" />
+    <Text Include="input\input2015p1.txt" />
+    <Text Include="input\input2015p2.txt" />
+    <Text Include="input\input2015p3.txt" />
+    <Text Include="input\input2015p5.txt" />
+    <Text Include="input\input2015p6.txt" />
+    <Text Include="input\input2015p7.txt" />
+    <Text Include="input\input2015p8.txt" />
+    <Text Include="input\input2023p10.txt" />
+    <Text Include="input\input2023p11.txt" />
+    <Text Include="input\input2023p9.txt" />
+    <Text Include="input\input2023p5.txt" />
+    <Text Include="input\input2023p1.txt" />
+    <Text Include="input\input2023p2.txt" />
+    <Text Include="input\input2023p3.txt" />
+    <Text Include="input\input2023p4.txt" />
+    <Text Include="input\input2023p6.txt" />
+    <Text Include="input\input2023p7.txt" />
+    <Text Include="input\input2023p8.txt" />
     <Text Include="random_work.txt" />
     <Text Include="testing_input.txt" />
   </ItemGroup>

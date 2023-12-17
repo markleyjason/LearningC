@@ -125,8 +125,30 @@ IntegerArray* setupIntegerArray(size_t size) {
 	return NULL;
 }
 
+COLLECTIONS_RETURN_CODES setupIntegerArrayPassing(IntegerArray* array, size_t size) {
+	int32_t* temp = realloc(array->data, size);
+	if (temp == NULL) {
+		return OUT_OF_MEMORY;
+	}
+	array->data = temp;
+	array->logicalSize = 0;
+	array->size = size;
+	return SUCCESS;
+}
+
 COLLECTIONS_RETURN_CODES destroyIntegerArray(IntegerArray* array) {
 	free(array->data);
 	free(array);
 	return SUCCESS;
+}
+
+COLLECTIONS_RETURN_CODES clearArray(IntegerArray* array, size_t newSize) {
+	int32_t* temp = realloc(array->data, newSize);
+	if (temp != NULL) {
+		array->data = temp;
+		array->logicalSize = 0;
+		array->size = newSize;
+		return SUCCESS;
+	}
+	return OUT_OF_MEMORY;
 }
