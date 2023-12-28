@@ -2,7 +2,9 @@
 #include <stdio.h>
 
 #define EGGNOG 150
-adv2015(){
+static void adv2015p17();
+
+static void adv2015p17(){
 //main() {
 	unsigned __int32 bottles[20] = { 0 };
 	unsigned char beingUsed[20] = { '0' };
@@ -97,33 +99,6 @@ adv2015(){
 				curMov++;
 				beingUsed[curMov] = 1;
 			}
-			/*if (curMov == numBottles) {
-				if (beingUsed[lastOne + 1] == 1) {
-
-				}else if (beingUsed[lastOne] == 1) {
-					beingUsed[curMov - 1] = 0;
-					beingUsed[lastOne] = 0;
-					lastOne++;
-					curMov = lastOne + 1;
-					beingUsed[lastOne] = 1;
-					beingUsed[curMov] = 1;
-				} else {
-					numOnes++;
-					for (index = 0; index < numOnes; index++) {
-						beingUsed[index] = 1;
-					}
-					curMov = index - 1;
-					lastOne = curMov - 1;
-					for (; index < numBottles; index++) {
-						beingUsed[index] = 0;
-					}
-				}
-			} else if(beingUsed[curMov] == 1){
-				printf("here");
-			} else {
-				beingUsed[curMov - 1] = 0;
-				beingUsed[curMov] = 1;
-			}*/
 		}
 		printf("Number of combinations: %d\n", numCombinations);
 	}

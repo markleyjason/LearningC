@@ -17,7 +17,7 @@ ad2015p2() {
 
 	char error = fopen_s(&fptr, "input2015p2.txt", "r");
 
-	if (fptr != NULL) {
+	if (!error) {
 		while(fgets(line, buffer, fptr) != NULL) {
 			for (i = 0; i < 3; i++) {
 				dims[i] = 0;

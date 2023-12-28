@@ -2,7 +2,7 @@
 #include <string.h>
 #include "namedmultinodeconnector.h"
 
-void buildHead(NamedMultiNode** head, char* firstCity, char* secondCity, __int32 buffer, __int32 travel) {
+void buildHead(NamedMultiNode** head, char* firstCity, char* secondCity, int32_t buffer, int32_t travel) {
 	*head = (NamedMultiNode*)malloc(sizeof(NamedMultiNode));
 	if ((*head) != NULL) {
 		strcpy_s((*head)->name, buffer, firstCity);
@@ -11,8 +11,8 @@ void buildHead(NamedMultiNode** head, char* firstCity, char* secondCity, __int32
 	}
 }
 
-void attachToHeadBothDirections(NamedMultiNode* head, char* firstCity, char* secondCity, __int32 buffer, __int32 travel) {
-	__int32 index = head->numConnections;
+void attachToHeadBothDirections(NamedMultiNode* head, char* firstCity, char* secondCity, int32_t buffer, int32_t travel) {
+	int32_t index = head->numConnections;
 	NamedMultiNode* newCity = (NamedMultiNode*)malloc(sizeof(NamedMultiNode));
 	if (newCity != NULL) {
 		newCity->pathId = -1;
@@ -23,8 +23,8 @@ void attachToHeadBothDirections(NamedMultiNode* head, char* firstCity, char* sec
 	}
 }
 
-void attachToHeadSingleDirection(NamedMultiNode* head, char* firstCity, char* secondCity, __int32 buffer, __int32 travel) {
-	__int32 index = head->numConnections;
+void attachToHeadSingleDirection(NamedMultiNode* head, char* firstCity, char* secondCity, int32_t buffer, int32_t travel) {
+	int32_t index = head->numConnections;
 	NamedMultiNode* newCity = (NamedMultiNode*)malloc(sizeof(NamedMultiNode));
 	if (newCity != NULL) {
 		newCity->pathId = -1;
@@ -34,7 +34,7 @@ void attachToHeadSingleDirection(NamedMultiNode* head, char* firstCity, char* se
 	}
 }
 
-void createPath(NamedMultiNode* first, NamedMultiNode* second, __int32 travel) {
+void createPath(NamedMultiNode* first, NamedMultiNode* second, int32_t travel) {
 	first->next[first->numConnections] = (NamedMultiNodeConnector*)malloc(sizeof(NamedMultiNodeConnector));
 	if (first->next[first->numConnections] != NULL) {
 		first->next[first->numConnections]->next = second;
@@ -44,20 +44,20 @@ void createPath(NamedMultiNode* first, NamedMultiNode* second, __int32 travel) {
 
 }
 
-__int32 getIndex(const NamedMultiNode* head, const char* city) {
-	__int32 index = 0;
-	__int32 count = head->numConnections;
+int32_t getIndex(const NamedMultiNode* head, const char* city) {
+	int32_t index = 0;
+	int32_t count = head->numConnections;
 	while (index < count && strcmp(head->next[index]->next->name, city) != 0) {
 		index++;
 	}
 	return index;
 }
 
-__int32 findLowestWeightPathHead(NamedMultiNode* head) {
-	__int32 index = 0;
-	__int32 curCity = 0;
-	__int32 pathWeight = INT_MAX;
-	__int32 tempWeight;
+int32_t findLowestWeightPathHead(NamedMultiNode* head) {
+	int32_t index = 0;
+	int32_t curCity = 0;
+	int32_t pathWeight = INT_MAX;
+	int32_t tempWeight;
 
 
 	while (index < head->numConnections) {
@@ -71,10 +71,10 @@ __int32 findLowestWeightPathHead(NamedMultiNode* head) {
 	return pathWeight;
 }
 
-__int32 findLowestWeightPath(NamedMultiNode* head, __int32 pathId) {
-	__int32 index = 0;
-	__int32 pathWeight = INT_MAX;
-	__int32 tempWeight = 0;
+int32_t findLowestWeightPath(NamedMultiNode* head, int32_t pathId) {
+	int32_t index = 0;
+	int32_t pathWeight = INT_MAX;
+	int32_t tempWeight = 0;
 	char foundChild = 0;
 
 
@@ -96,11 +96,11 @@ __int32 findLowestWeightPath(NamedMultiNode* head, __int32 pathId) {
 	return pathWeight;
 }
 
-__int32 findHighestWeightPathHead(NamedMultiNode* head) {
-	__int32 index = 0;
-	__int32 curCity = 0;
-	__int32 weight = INT_MIN;
-	__int32 tempWeight;
+int32_t findHighestWeightPathHead(NamedMultiNode* head) {
+	int32_t index = 0;
+	int32_t curCity = 0;
+	int32_t weight = INT_MIN;
+	int32_t tempWeight;
 
 	while (index < head->numConnections) {
 		head->pathId = index;
@@ -113,10 +113,10 @@ __int32 findHighestWeightPathHead(NamedMultiNode* head) {
 	return weight;
 }
 
-__int32 findHighestWeightPath(NamedMultiNode* head, __int32 pathId) {
-	__int32 index = 0;
-	__int32 pathWeight = INT_MIN;
-	__int32 tempWeight = 0;
+int32_t findHighestWeightPath(NamedMultiNode* head, int32_t pathId) {
+	int32_t index = 0;
+	int32_t pathWeight = INT_MIN;
+	int32_t tempWeight = 0;
 	char foundChild = 0;
 
 
@@ -138,11 +138,11 @@ __int32 findHighestWeightPath(NamedMultiNode* head, __int32 pathId) {
 	return pathWeight;
 }
 
-__int32 findLowestWeightPathHeadCircle(NamedMultiNode* head) {
-	__int32 index = 0;
-	__int32 curCity = 0;
+int32_t findLowestWeightPathHeadCircle(NamedMultiNode* head) {
+	int32_t index = 0;
+	int32_t curCity = 0;
 	circle_return_value pathAnswer = { .name = '\0', .weight = INT_MAX };
-	__int32 pathLength = INT_MAX;
+	int32_t pathLength = INT_MAX;
 
 	while (index < head->numConnections) {
 		head->pathId = index;
@@ -156,10 +156,10 @@ __int32 findLowestWeightPathHeadCircle(NamedMultiNode* head) {
 	return pathLength;
 }
 
-circle_return_value findLowestWeightPathCircle(NamedMultiNode* head, __int32 pathId, char callerName[NAME_LENGTH], char headName[NAME_LENGTH]) {
-	__int32 index = 0;
+circle_return_value findLowestWeightPathCircle(NamedMultiNode* head, int32_t pathId, char callerName[NAME_LENGTH], char headName[NAME_LENGTH]) {
+	int32_t index = 0;
 	circle_return_value pathAnswer = { .name = '\0', .weight = INT_MAX };
-	__int32 lowestWeight = INT_MAX;
+	int32_t lowestWeight = INT_MAX;
 	char foundChild = 0;
 
 	while (index < head->numConnections) {
@@ -186,10 +186,10 @@ circle_return_value findLowestWeightPathCircle(NamedMultiNode* head, __int32 pat
 	return pathAnswer;
 }
 
-__int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
-	__int32 index = 0;
-	__int32 curCity = 0;
-	__int32 weight = INT_MIN;
+int32_t findHighestWeightPathHeadCircle(NamedMultiNode* head) {
+	int32_t index = 0;
+	int32_t curCity = 0;
+	int32_t weight = INT_MIN;
 	circle_return_value pathAnswer;
 
 	while (index < head->numConnections) {
@@ -204,8 +204,8 @@ __int32 findHighestWeightPathHeadCircle(NamedMultiNode* head) {
 	return weight;
 }
 
-circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, const __int32 pathId, const char callerName[NAME_LENGTH],const char headName[NAME_LENGTH]) {
-	__int32 index = 0;
+circle_return_value findHighestWeightPathCircle(NamedMultiNode* head, const int32_t pathId, const char callerName[NAME_LENGTH],const char headName[NAME_LENGTH]) {
+	int32_t index = 0;
 	circle_return_value pathAnswer;
 	circle_return_value bestAnswer = { .name = {'\0' }, .weight = INT_MIN };
 	char foundChild = 0;

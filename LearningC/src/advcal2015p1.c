@@ -1,6 +1,8 @@
 #include <stdio.h>
 
- adv2015p1() {
+
+
+ static void adv2015p1() {
 	 int floor = 0;
 	 int position = 1;
 	 FILE* fptr;

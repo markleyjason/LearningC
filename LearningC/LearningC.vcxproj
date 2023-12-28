@@ -149,6 +149,7 @@
       <OmitFramePointers>
       </OmitFramePointers>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\markl\source\repos\LearningC\LearningC</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,7 +177,9 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <AdditionalIncludeDirectories>C:\Users\markl\source\repos\LearningC\LearningC</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -186,7 +189,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="advcal2023p12.c" />
     <ClCompile Include="src\advcal2015p17.c" />
     <ClCompile Include="src\advcal2015p18.c" />
     <ClCompile Include="src\advcal2015p7t2.c" />
@@ -209,6 +211,7 @@
     <ClCompile Include="src\advcal2023p1.c" />
     <ClCompile Include="src\advcal2023p10.c" />
     <ClCompile Include="src\advcal2023p11.c" />
+    <ClCompile Include="src\advcal2023p12.c" />
     <ClCompile Include="src\advcal2023p2.c" />
     <ClCompile Include="src\advcal2023p3.c" />
     <ClCompile Include="src\advcal2023p4.c" />
@@ -256,6 +259,7 @@
     <Text Include="input\input2023p7.txt" />
     <Text Include="input\input2023p8.txt" />
     <Text Include="random_work.txt" />
+    <Text Include="testing.txt" />
     <Text Include="testing_input.txt" />
   </ItemGroup>
   <ItemGroup>

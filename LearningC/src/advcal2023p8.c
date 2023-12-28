@@ -30,7 +30,7 @@ static adv2023p8() {
 	int16_t dIndex = 0;
 	int16_t numNodes = 0;
 	int32_t numSteps = 0;
-	int16_t dirLen = 0;
+	int32_t dirLen = 0;
 	AdvMapping* currentPlace = NULL;
 	AdvMapping* currentPlaceP2[10] = { NULL };
 	uint32_t p2steps = 0;
