@@ -25,10 +25,10 @@ typedef struct hashtable {
 
 hashtableReturnCodes setUpHashTable(hashtable* table, size_t numBuckets, size_t dataSize);
 
-hashtableReturnCodes insertHashTable(hashtable* table, void* item, void* context, int32_t (*hashFunct(const void* data, const void* context)));
+hashtableReturnCodes insertHashTable(hashtable* table, void* item, void* context, int32_t (hashFunct(const void* data, const void* context)));
 
-hashtableReturnCodes removeItem(hashtable* table, void* item, void* hashContext, int32_t (*hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context));
+hashtableReturnCodes removeItem(hashtable* table, void* item, void* hashContext, int32_t (hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context));
 
-hashtableReturnCodes replaceItem(hashtable* table, void* item, void* hashContext, int32_t (*hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context));
+hashtableReturnCodes replaceItem(hashtable* table, void* item, void* hashContext, int32_t (hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context));
 
-void* containsItem(hashtable* table, void* item, void* hashContext, int32_t (*hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context));
+void* containsItem(hashtable* table, void* item, void* hashContext, int32_t (hashFunct(void* data, void* hashContext)), void* compContext, int32_t compare(void* firstData, void* secondData, void* context));

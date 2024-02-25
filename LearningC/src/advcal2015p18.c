@@ -6,10 +6,9 @@ char lights2[100][100];
 
 void changeLight1(const unsigned __int32 mainIndex, const unsigned __int32 subIndex);
 void changeLight2(const unsigned __int32 mainIndex, const unsigned __int32 subIndex);
-static void adv2015p18();
 
-//static void adv2015p18() {
-main() {
+static void adv2015p18() {
+//main() {
 	FILE* fptr;
 	errno_t error;
 	char input;

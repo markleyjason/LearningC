@@ -83,13 +83,13 @@ static int advcal23p12(){
 				}
 			}
 			linePart2[strlen(linePart2) - 1] = '\0';
-			sum += findPossibleRunsOrder(token1, tempInformation);
+			sum += (uint32_t)findPossibleRunsOrder(token1, tempInformation);
 			sumPart2 += findPossibleRunsOrder(linePart2, tempInformationPart2);
 			//printf("Answer: %llu\n", sumPart2);
 			end = clock();
 			dif = (double)(end - start) * 1000 / CLOCKS_PER_SEC;
 			//printf("Time spent: %f\n", dif);
-			index = strlen(linePart2);
+			index = (uint32_t)strlen(linePart2);
 			for (indexLen = 0; indexLen < BUFFER; indexLen++) {
 				linePart2[indexLen] = '\0';
 			}
@@ -117,7 +117,7 @@ static uint64_t findPossibleRunsOrder(char* line, const HotSpring answer) {
 	char* lines[BUFFER] = { '\0' };
 	char* context = NULL;
 	hashtableReturnCodes val = SUCCESS;
-	previousFindsParts item = { .numLengths = answer.numberOfLengths, .numbers = answer.lengths, .seqSize = strlen(line), .sequence = "" };
+	previousFindsParts item = { .numLengths = answer.numberOfLengths, .numbers = answer.lengths, .seqSize = (uint16_t)strlen(line), .sequence = "" };
 	strcpy_s(item.sequence, BUFFER, line);
 	
 	for (index = 1; index < answer.numberOfLengths; index++) {
@@ -133,7 +133,7 @@ static uint64_t findPossibleRunsOrder(char* line, const HotSpring answer) {
 	count = 0;
 
 	if (answer.numberOfLengths == 0) {
-		index = strlen(line);
+		index = (uint32_t)strlen(line);
 		if (index == 0) {
 			item.count = 1;
 			insertHashTable(&previousFound, &item, NULL, &pfpHashFunc);
@@ -162,7 +162,7 @@ static uint64_t findPossibleRunsOrder(char* line, const HotSpring answer) {
 	index = 0;
 	while (index < size) {
 		if (index > 0) {
-			if (lineCheck(lines[index - 1], strlen(lines[index - 1])) == -1) {
+			if (lineCheck(lines[index - 1], (uint16_t)strlen(lines[index - 1])) == -1) {
 				item.count = count;
 				insertHashTable(&previousFound, &item, NULL, &pfpHashFunc);
 				return count;
@@ -228,7 +228,7 @@ static void combineLinesAfter(char* lines[BUFFER], uint16_t num_lines, uint16_t 
 			}
 		} else {
 			read = 0;
-			write = strlen(ans);
+			write = (uint32_t)strlen(ans);
 			while (read < strlen(lines[index])) {
 				ans[write] = lines[index][read];
 				write++;
@@ -248,7 +248,7 @@ static void combineLines(char* lines[20], uint16_t num_lines, uint16_t spcIndex,
 		if (index == spcIndex) {
 			if (start != 0 || end < strlen(lines[index])) {
 				read = 0;
-				write = strlen(ans);
+				write = (uint16_t)strlen(ans);
 				while (read < start - 1) {
 					ans[write] = lines[index][read];
 					write++;
@@ -265,7 +265,7 @@ static void combineLines(char* lines[20], uint16_t num_lines, uint16_t spcIndex,
 			}
 		} else {
 			read = 0;
-			write = strlen(ans);
+			write = (uint16_t)strlen(ans);
 			while (read < strlen(lines[index])) {
 				ans[write] = lines[index][read];
 				write++;
@@ -297,7 +297,7 @@ int32_t pfpHashFunc(const void* item, const void* context) {
 int32_t comparePFPAdv(const void* item1, const void* item2, const void* context) {
 	previousFindsParts firstItem = *(previousFindsParts*)item1;
 	previousFindsParts secondItem = *(previousFindsParts*)item2;
-	int16_t index = 0;
+	uint16_t index = 0;
 	if (firstItem.numLengths == secondItem.numLengths) {
 		if (firstItem.seqSize == secondItem.seqSize) {
 			for (index = 0; index < firstItem.numLengths; index++) {

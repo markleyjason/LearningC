@@ -22,6 +22,9 @@ static void rotateSouth(uint16_t rows);
 static char grid[GRID_SIZE][GRID_SIZE] = { '\0' };
 static char line[GRID_SIZE] = { '\0' };
 
+static advp14grid tempGrid = { .rows = 0, .width = 0, .theGrid = {'\0' } };
+static advp14grid tempGridMain = { .rows = 0, .width = 0, .theGrid = {'\0' } };
+
 static hashtable theTable;
 
 static int adv2023p14() {
@@ -38,8 +41,7 @@ static int adv2023p14() {
 	uint32_t steps = 0;
 	int cmp = 0;
 	
-	advp14grid tempGrid = { .rows = 0, .width = 0, .theGrid = {'\0' } };
-	advp14grid tempGridMain = { .rows = 0, .width = 0, .theGrid = {'\0' } };
+	
 
 
 	setUpHashTable(&theTable, 3000, sizeof(advp14grid));
