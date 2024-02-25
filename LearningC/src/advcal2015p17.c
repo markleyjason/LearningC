@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 #define EGGNOG 150
-static void adv2015p17();
 
 static void adv2015p17(){
 //main() {

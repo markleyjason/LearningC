@@ -189,6 +189,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="advcal2023p13.c" />
+    <ClCompile Include="advcal2023p14.c" />
+    <ClCompile Include="advcal2023p15.c" />
+    <ClCompile Include="advcal2023p16.c" />
+    <ClCompile Include="advcal2023p17.c" />
+    <ClCompile Include="binary_heap.c" />
+    <ClCompile Include="hashtable.c" />
     <ClCompile Include="src\advcal2015p17.c" />
     <ClCompile Include="src\advcal2015p18.c" />
     <ClCompile Include="src\advcal2015p7t2.c" />
@@ -231,6 +238,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2023p12.txt" />
+    <Text Include="input2023p13.txt" />
+    <Text Include="input2023p14.txt" />
+    <Text Include="input2023p15.txt" />
+    <Text Include="input2023p16.txt" />
+    <Text Include="input2023p17.txt" />
+    <Text Include="input2023p18.txt" />
     <Text Include="input\input2015p12.txt" />
     <Text Include="input\input2015p13.txt" />
     <Text Include="input\input2015p14.txt" />
@@ -264,6 +277,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binarysearchtreestring.h" />
+    <ClInclude Include="binary_heap.h" />
+    <ClInclude Include="hashtable.h" />
     <ClInclude Include="namedmultinodeconnector.h" />
     <ClInclude Include="collections.h" />
     <ClInclude Include="helper.h" />
