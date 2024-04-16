@@ -25,7 +25,8 @@ static char possibleMatch(char* line, uint16_t length, uint16_t start);
 static void combineLinesAfter(char* lines[BUFFER], uint16_t num_lines, uint16_t spcIndex, uint16_t start, uint16_t end, char* ans);
 static int8_t lineCheck(const char* line, const uint16_t start);
 
-main() {
+int advcal2023p12() {
+//main() {
 	FILE* fptr;
 	errno_t error;
 	char line[BUFFER] = { '\0' };

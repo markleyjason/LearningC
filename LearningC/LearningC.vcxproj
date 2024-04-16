@@ -189,6 +189,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="advcal2023p18.c" />
     <ClCompile Include="src\advcal2015p17.c" />
     <ClCompile Include="src\advcal2015p18.c" />
     <ClCompile Include="src\advcal2015p7t2.c" />
@@ -231,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input2023p12.txt" />
+    <Text Include="input2023p18.txt" />
     <Text Include="input\input2015p12.txt" />
     <Text Include="input\input2015p13.txt" />
     <Text Include="input\input2015p14.txt" />
