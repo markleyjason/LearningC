@@ -138,6 +138,27 @@
     <ClCompile Include="advcal2023p18.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hashtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2023p17.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_heap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="testing_input.txt" />
@@ -230,6 +251,27 @@
     <Text Include="input2023p12.txt">
       <Filter>input</Filter>
     </Text>
+    <Text Include="input2023p13.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p14.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p12.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p16.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p15.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p17.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p18.txt">
+      <Filter>input</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helper.h">
@@ -245,6 +287,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="binarysearchtreestring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

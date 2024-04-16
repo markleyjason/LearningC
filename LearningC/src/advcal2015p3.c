@@ -5,7 +5,7 @@ __int32 north_west[1000][1000] = { 0 };
 __int32 south_east[1000][1000] = { 0 };
 __int32 south_west[1000][1000] = { 0 };
 
-__int32 insert(__int32, __int32);
+static __int32 insert(__int32, __int32);
 
 enum {
 	NORTH = '^',
@@ -83,7 +83,7 @@ adv2015p3() {
 	printf("House visited: %d\n", visited_houses);
 }
 
-__int32 insert(__int32 x_pos, __int32 y_pos) {
+static __int32 insert(__int32 x_pos, __int32 y_pos) {
 	__int32 array_pos_count;
 
 	printf("Coord is (%d, %d)\n", x_pos, y_pos);

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "namedmultinodeconnector.h"
 
-adv2015p9() {
+static void adv2015p9() {
 //main() {
 	FILE* input;
 	__int32 buffer = 50;
