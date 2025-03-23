@@ -237,6 +237,43 @@ int32_t ctoai(const char input) {
 	return (int32_t)input - '0';
 }
 
+int32_t hctoai(const char digit) {
+	int32_t val = 0;
+	if (isDigit(digit)) {
+		return ctoai(digit);
+	} else {
+		switch (digit) {
+		case 'a':
+		case 'A':
+			val = 10;
+			break;
+		case 'b':
+		case 'B':
+			val = 11;
+			break;
+		case 'c':
+		case 'C':
+			val = 12;
+			break;
+		case 'd':
+		case 'D':
+			val = 13;
+			break;
+		case 'e':
+		case 'E':
+			val = 14;
+			break;
+		case 'f':
+		case 'F':
+			val = 15;
+			break;
+		default:
+			val = -1;
+		}
+	}
+	return val;
+}
+
 int32_t findMin(const int32_t* array, const int32_t length) {
 	int i = 0;
 	int min = INT_MAX;

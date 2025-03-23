@@ -135,6 +135,9 @@
     <ClCompile Include="src\advcal2023p12.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="advcal2023p18.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="hashtable.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -260,6 +263,12 @@
       <Filter>input</Filter>
     </Text>
     <Text Include="testing.txt" />
+    <Text Include="input2023p18.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p12.txt">
+      <Filter>input</Filter>
+    </Text>
     <Text Include="input2023p13.txt">
       <Filter>input</Filter>
     </Text>
@@ -279,15 +288,6 @@
       <Filter>input</Filter>
     </Text>
     <Text Include="input2023p18.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="input2015p21.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="input2015p23.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="input15p24.txt">
       <Filter>input</Filter>
     </Text>
   </ItemGroup>

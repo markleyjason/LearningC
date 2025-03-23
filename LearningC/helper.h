@@ -7,6 +7,8 @@ int32_t stringIsDigit(const char* string, size_t index);
 
 int32_t ctoai(const char digit);
 
+int32_t hctoai(const char digit);
+
 char* uint32arraytostring(const int32_t size, const int32_t* start);
 
 int32_t stoai(const char* input);

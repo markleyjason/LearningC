@@ -56,7 +56,7 @@ hashtableReturnCodes insertHashTable(hashtable* table, void* item, void* context
 	return SUCCESS;
 }
 
-hashtableReturnCodes removeItem(hashtable* table, void* item, void* hashContext, int32_t (*hashFunct(void* data, void* hashContext)), void* compContext, int32_t compare(void* firstData, void* secondData, void* context)) {
+hashtableReturnCodes removeItem(hashtable* table, void* item, void* hashContext, int32_t(hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context)) {
 	int32_t hash = hashFunct(item, hashContext);
 	void* ans = NULL;
 	unsigned char* read = NULL;
@@ -88,7 +88,7 @@ hashtableReturnCodes removeItem(hashtable* table, void* item, void* hashContext,
 	return SUCCESS;
 }
 
-hashtableReturnCodes replaceItem(hashtable* table, void* item, void* hashContext, int32_t (*hashFunct(void* data, void* hashContext)), void* compContext, int32_t compare(void* firstData, void* secondData, void* context)) {
+hashtableReturnCodes replaceItem(hashtable* table, void* item, void* hashContext, int32_t(hashFunct(void* data, void* hashContext)), void* compContext, int32_t* compare(void* firstData, void* secondData, void* context)) {
 	int32_t hash = hashFunct(item, hashContext);
 	void* ans = NULL;
 	unsigned char* itemOverwriting = NULL;
