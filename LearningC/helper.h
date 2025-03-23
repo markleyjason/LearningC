@@ -13,7 +13,9 @@ int32_t stoai(const char* input);
 
 uint32_t stoaui(const char* input);
 
-__int64 stoai64(const char* input);
+int64_t stoai64(const char* input);
+
+size_t int16toc(char* output, size_t start, int16_t number);
 
 int32_t writtenstoad(const char* input);
 
@@ -21,4 +23,3 @@ int32_t findMin(const int32_t*, const int32_t);
 
 int32_t findVolume(const int32_t, const int32_t, const int32_t);
 int32_t findVolumeA(const int32_t*);
-

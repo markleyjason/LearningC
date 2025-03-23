@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 char isDigit(const char input) {
-	int32_t ret = 0;
+	char ret = 0;
 	if (input - '0' >= 0 && input - '0' <= 9) {
 		ret = 1;
 	}
@@ -139,8 +139,10 @@ int32_t stoai(const char* input) {
 	if (input[0] == '-') {
 		sign = -1;
 		index++;
+	} else if (input[0] == '+') {
+		index++;
 	}
-	while (input[index] != '\0') {
+	while (input[index] != '\0' && input[index] != '\n') {
 		num = num * factor + ctoai(input[index]);
 		index++;
 	}
@@ -206,13 +208,23 @@ int32_t writtenstoad(const char* input) {
 	return value;
 }
 
+size_t int16toc(char* output, size_t start, int16_t number) {
+	while (number > 0) {
+		output[start] = number % 10 + '0';
+		start++;
+		number = number / 10;
+	}
+	output[start] = '\0';
+	return start;
+}
+
 //Assumes all integers in the array are only a single digit (0-9)
 char* uint32arraytostring(const int32_t size, const int32_t* start) {
 	char* array = malloc(sizeof(int32_t) * size + 1);
 	int32_t index = 0;
 	if (array != NULL) {
 		while (index < size) {
-			array[index] = start[index] + '0';
+			array[index] = (char)start[index] + '0';
 			index++;
 		}
 		array[index] = '\0';

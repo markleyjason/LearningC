@@ -156,6 +156,24 @@
     <ClCompile Include="binary_heap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="advcal1015p20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal15p21.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal15p22.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal15p23.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal15p24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advcal2015p25.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="testing_input.txt" />
@@ -261,6 +279,15 @@
       <Filter>input</Filter>
     </Text>
     <Text Include="input2023p18.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p21.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2015p23.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input15p24.txt">
       <Filter>input</Filter>
     </Text>
   </ItemGroup>

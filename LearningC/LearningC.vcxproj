@@ -189,6 +189,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="advcal1015p20.c" />
+    <ClCompile Include="advcal15p21.c" />
+    <ClCompile Include="advcal15p22.c" />
+    <ClCompile Include="advcal15p23.c" />
+    <ClCompile Include="advcal15p24.c" />
+    <ClCompile Include="advcal2015p25.c" />
     <ClCompile Include="advcal2023p13.c" />
     <ClCompile Include="advcal2023p14.c" />
     <ClCompile Include="advcal2023p15.c" />
@@ -237,6 +243,9 @@
     <ClCompile Include="testing.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="input15p24.txt" />
+    <Text Include="input2015p21.txt" />
+    <Text Include="input2015p23.txt" />
     <Text Include="input2023p12.txt" />
     <Text Include="input2023p13.txt" />
     <Text Include="input2023p14.txt" />
