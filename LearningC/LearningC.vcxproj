@@ -202,6 +202,7 @@
     <ClCompile Include="advcal2023p16.c" />
     <ClCompile Include="advcal2023p17.c" />
     <ClCompile Include="advcal2023p19.c" />
+    <ClCompile Include="advcal2023p20.c" />
     <ClCompile Include="binary_heap.c" />
     <ClCompile Include="hashtable.c" />
     <ClCompile Include="src\advcal2015p17.c" />
@@ -256,6 +257,7 @@
     <Text Include="input2023p17.txt" />
     <Text Include="input2023p18.txt" />
     <Text Include="input2023p19.txt" />
+    <Text Include="input2023p20.txt" />
     <Text Include="input\input2015p12.txt" />
     <Text Include="input\input2015p13.txt" />
     <Text Include="input\input2015p14.txt" />

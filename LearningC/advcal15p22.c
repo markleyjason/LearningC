@@ -24,7 +24,7 @@ void boss_turn_hard(struct m_stats boss, struct m_stats player, struct game_stat
 void timers(struct m_stats* boss, struct m_stats* player, struct game_state* game);
 void check_low(int32_t mana);
 
-int main() {
+int adv15p22() {
 	struct m_stats boss = { .health = 71, .damage = 10, .armor = 0, .mana = 0 };
 	struct m_stats player = { .health = 50, .mana = 500, .armor = 0, .damage = 0 };
 	//struct m_stats boss = { .health = 13, .damage = 8, .armor = 0, .mana = 0 };
