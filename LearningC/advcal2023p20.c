@@ -49,7 +49,7 @@ void broadcast(void);
 void handle_pulse(enum pulse_type type, char comp[NAME_SIZE], char sender[NAME_SIZE]);
 void handle_conj(enum pulse_type type, struct component* handler, char sender[NAME_SIZE]);
 void handle_flip_comp(enum pulse_type type, struct component* handler);
-void append_queue(enum pulse_type type, char comp[NAME_SIZE], char sender[NAME_SIZE]);
+static void append_queue(enum pulse_type type, char comp[NAME_SIZE], char sender[NAME_SIZE]);
 
 int32_t mapping_hash_funct_2320(const void* data, const void* context);
 int32_t searching_hash_funct_2320(const void* data, const void* context);
@@ -372,7 +372,7 @@ void handle_flip_comp(enum pulse_type type, struct component* handler) {
 	}
 }
 
-void append_queue(enum pulse_type type, char comp[NAME_SIZE], char sender[NAME_SIZE]) {
+static void append_queue(enum pulse_type type, char comp[NAME_SIZE], char sender[NAME_SIZE]) {
 	struct node* temp = malloc(sizeof(struct node));
 	errno_t error;
 	if (temp == NULL) {

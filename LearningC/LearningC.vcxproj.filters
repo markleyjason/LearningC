@@ -183,6 +183,12 @@
     <ClCompile Include="advcal2023p20.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="advcal2023p21.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="advac2023p22.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="testing_input.txt" />
@@ -301,6 +307,12 @@
     <Text Include="input2015p23.txt" />
     <Text Include="input2023p19.txt" />
     <Text Include="input2023p20.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p21.txt">
+      <Filter>input</Filter>
+    </Text>
+    <Text Include="input2023p22.txt">
       <Filter>input</Filter>
     </Text>
   </ItemGroup>

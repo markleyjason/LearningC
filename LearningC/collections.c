@@ -125,6 +125,22 @@ IntegerArray* setupIntegerArray(size_t size) {
 	return NULL;
 }
 
+gen_array* setup_gen_array(size_t size, size_t data_size) {
+	gen_array* array = malloc(sizeof(gen_array));
+	if (array != NULL) {
+		array->mem_size = size;
+		array->log_size = 0;
+		array->data_size = data_size;
+		array->data = malloc(size * data_size);
+		if (array->data != NULL) {
+			return array;
+		} else {
+			free(array);
+		}
+	}
+	return NULL;
+}
+
 COLLECTIONS_RETURN_CODES setupIntegerArrayPassing(IntegerArray* array, size_t size) {
 	int32_t* temp = realloc(array->data, size);
 	if (temp == NULL) {
