@@ -1,3 +1,4 @@
 input*.txt
 testing_input.txt
 *.txt
+vcpkg_installed/*
