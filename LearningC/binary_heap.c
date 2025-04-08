@@ -43,7 +43,7 @@ BinaryHeapReturnCodes insert(BinaryHeap* heap, const void* item, void* context, 
 	return SUCCESS;
 }
 
-BinaryHeapReturnCodes removeSmallest(BinaryHeap* heap, void* context, int(*compareFunction)(const void* item1, const void* item2, const void* context), void* ans) {
+BinaryHeapReturnCodes removeNext(BinaryHeap* heap, void* context, int(*compareFunction)(const void* item1, const void* item2, const void* context), void* ans) {
 	errno_t error;
 	char* end = heap->data;
 	if (heap->logicalSize > 0) {

@@ -190,7 +190,7 @@ static void startPath(int16_t index, int16_t sindex) {
 		exit(-2);
 	}
 	while (grid[height - 1][width - 1].visited[0] == 0 && grid[height - 1][width - 1].visited[1] == 0 && grid[height - 1][width - 1].visited[2] == 0 && grid[height - 1][width - 1].visited[3] == 0 && grid[height - 1][width - 1].visited[4] == 0 && grid[height - 1][width - 1].visited[5] == 0) {
-		error = removeSmallest(&heap, NULL, compareFunction, &tempPart);
+		error = removeNext(&heap, NULL, compareFunction, &tempPart);
 		if (error) {
 			printf("Heap error removing\n");
 			exit(-3);
@@ -329,7 +329,7 @@ static void startPath2(int16_t index, int16_t sindex) {
 		exit(-2);
 	}
 	while (comp == 0) {
-		error = removeSmallest(&heap, NULL, compareFunction, &tempPart);
+		error = removeNext(&heap, NULL, compareFunction, &tempPart);
 		if (error) {
 			printf("Heap error removing\n");
 			exit(-3);

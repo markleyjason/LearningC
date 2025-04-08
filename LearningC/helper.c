@@ -161,9 +161,9 @@ uint32_t stoaui(const char* input) {
 }
 
 int64_t stoai64(const char* input) {
-	int32_t factor = 10;
-	int32_t sign = 1;
-	int32_t index = 0;
+	int64_t factor = 10;
+	int64_t sign = 1;
+	size_t index = 0;
 	int64_t num = 0;
 	if (input[0] == '-') {
 		sign = -1;

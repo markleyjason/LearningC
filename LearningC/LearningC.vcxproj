@@ -189,13 +189,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="advac2023p22.c" />
+    <ClCompile Include="advcal2023p22.c" />
     <ClCompile Include="advcal1015p20.c" />
     <ClCompile Include="advcal15p21.c" />
     <ClCompile Include="advcal15p22.c" />
     <ClCompile Include="advcal15p23.c" />
     <ClCompile Include="advcal15p24.c" />
     <ClCompile Include="advcal2015p25.c" />
+    <ClCompile Include="advcal2023023.c" />
     <ClCompile Include="advcal2023p18.c" />
     <ClCompile Include="advcal2023p13.c" />
     <ClCompile Include="advcal2023p14.c" />
@@ -205,6 +206,7 @@
     <ClCompile Include="advcal2023p19.c" />
     <ClCompile Include="advcal2023p20.c" />
     <ClCompile Include="advcal2023p21.c" />
+    <ClCompile Include="advcal2023p24.c" />
     <ClCompile Include="binary_heap.c" />
     <ClCompile Include="hashtable.c" />
     <ClCompile Include="src\advcal2015p17.c" />
@@ -262,6 +264,8 @@
     <Text Include="input2023p20.txt" />
     <Text Include="input2023p21.txt" />
     <Text Include="input2023p22.txt" />
+    <Text Include="input2023p23.txt" />
+    <Text Include="input2023p24.txt" />
     <Text Include="input\input2015p12.txt" />
     <Text Include="input\input2015p13.txt" />
     <Text Include="input\input2015p14.txt" />

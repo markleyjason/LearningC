@@ -23,7 +23,7 @@ static void testing() {
 	insert(&heap, &two, NULL, &compareTesting);
 	insert(&heap, &min, NULL, &compareTesting);
 	while (heap.logicalSize > 0) {
-		removeSmallest(&heap, NULL, &compareTesting, &ans);
+		removeNext(&heap, NULL, &compareTesting, &ans);
 		printf("%lld\n", ans);
 	}
 	insert(&heap, &max, NULL, &compareTesting);
@@ -31,7 +31,7 @@ static void testing() {
 	insert(&heap, &two, NULL, &compareTesting);
 	insert(&heap, &min, NULL, &compareTesting);
 	while (heap.logicalSize > 0) {
-		removeSmallest(&heap, NULL, &compareTesting, &ans);
+		removeNext(&heap, NULL, &compareTesting, &ans);
 		printf("%lld\n", ans);
 	}
 	insert(&heap, &one, NULL, &compareTesting);
@@ -39,7 +39,7 @@ static void testing() {
 	insert(&heap, &max, NULL, &compareTesting);
 	insert(&heap, &min, NULL, &compareTesting);
 	while (heap.logicalSize > 0) {
-		removeSmallest(&heap, NULL, &compareTesting, &ans);
+		removeNext(&heap, NULL, &compareTesting, &ans);
 		printf("%lld\n", ans);
 	}
 	deleteHeap(&heap);

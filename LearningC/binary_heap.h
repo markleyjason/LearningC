@@ -17,6 +17,6 @@ typedef enum BinaryHeapReturnCodes {
 
 BinaryHeapReturnCodes setupHeap(BinaryHeap* heap, size_t dataSize);
 BinaryHeapReturnCodes insert(BinaryHeap* heap, const void* item, void* context, int (*compareFunction)(const void* item1, const void* item2, const void* context));
-BinaryHeapReturnCodes removeSmallest(BinaryHeap* heap, void* context, int(*compareFunction)(const void* item1, const void* item2, const void* context), void* ans);
+BinaryHeapReturnCodes removeNext(BinaryHeap* heap, void* context, int(*compareFunction)(const void* item1, const void* item2, const void* context), void* ans);
 BinaryHeapReturnCodes pushPop(BinaryHeap* heap, const void* item, void* context, int(*compareFunction)(const void* item1, const void* item2, const void* context), void* ans);
 BinaryHeapReturnCodes deleteHeap(BinaryHeap* heap);
