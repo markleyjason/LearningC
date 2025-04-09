@@ -1,0 +1,9 @@
+#define OUTER
+#define ASMNAME _ctrmm_outncopy
+#define ASMFNAME _ctrmm_outncopy_
+#define NAME ctrmm_outncopy_
+#define CNAME ctrmm_outncopy
+#define CHAR_NAME "ctrmm_outncopy_"
+#define CHAR_CNAME "ctrmm_outncopy"
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/kernel/generic/ztrmm_utcopy_2.c"

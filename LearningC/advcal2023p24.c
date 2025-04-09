@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>
-#include <float.h>
+#include <math.h>
 #include "helper.h"
 
 #define BUFFER 75
@@ -28,7 +28,7 @@ static struct point_slope points[MAX_SIZE];
 static int16_t num_points;
 
 //static int matrix[6][6];
-static double answer[6];
+static int64_t answer[6];
 static double t_ans[6];
 
 static double testing[6][6];
@@ -37,11 +37,51 @@ static struct point_3d check_intersect_2d(int16_t first, int16_t second);
 static char slope_3d(struct point_slope x, struct point_slope y);
 
 static void find_inverse(int64_t** matrix, double m_minor[6][6]);
-static double find_minor(size_t size, size_t row, size_t col, int64_t** the_matrix);
-static double find_det(size_t size, int64_t** the_matrix);
+static int64_t find_minor(size_t size, size_t row, size_t col, int64_t** the_matrix);
+static int64_t find_det(size_t size, int64_t** the_matrix);
 
+static void gaussianElimination(double** matrix, size_t rows, size_t col) {
+	for (int i = 0; i < rows; i++) {
+		// Partial Pivoting
+		for (int k = i + 1; k < rows; k++) {
+			if (fabs(matrix[i][i]) < fabs(matrix[k][i])) {
+				for (int j = 0; j <= rows; j++) {
+					double temp = matrix[i][j];
+					matrix[i][j] = matrix[k][j];
+					matrix[k][j] = temp;
+				}
+			}
+		}
 
-int main() {
+		// Forward Elimination
+		for (int k = i + 1; k < rows; k++) {
+			double term = matrix[k][i] / matrix[i][i];
+			for (int j = 0; j <= rows; j++) {
+				matrix[k][j] -= term * matrix[i][j];
+			}
+		}
+	}
+
+	// Back Substitution
+	double solution[6] = { 0 };
+	for (int i = rows - 1; i >= 0; i--) {
+		solution[i] = matrix[i][rows];
+		for (int j = i + 1; j < rows; j++) {
+			solution[i] -= matrix[i][j] * solution[j];
+		}
+		solution[i] /= matrix[i][i];
+	}
+
+	// Print the solution
+	printf("Solution:\n");
+	for (int i = 0; i < rows; i++) {
+		printf("x%d = %f\n", i + 1, solution[i]);
+	}
+	printf("Part 2?: %f\n", solution[0] + solution[1] + solution[2]);
+}
+
+int advcal2023p24() {
+//int main() {
 	FILE* fptr;
 	errno_t error;
 	char line[BUFFER] = { '\0' };
@@ -55,13 +95,14 @@ int main() {
 	//int64_t test_max = 27;
 	int64_t test_max = 400000000000000;
 	double inverse[6][6];
-	int64_t** matrix = malloc(6 * sizeof(int64_t*));
+	double det = 0;
+	double** matrix = malloc(6 * sizeof(double*));
 	if (matrix == NULL) {
 		printf("Ran out of memory before we could begin\n");
 		exit(-6);
 	}
 	for (index = 0; index < 6; index++) {
-		matrix[index] = malloc(6 * sizeof(int64_t));
+		matrix[index] = malloc(7 * sizeof(double));
 		if (matrix[index] == NULL) {
 			printf("Ran out of memory before we could begin. %d\n", index);
 			exit(-6);
@@ -85,7 +126,7 @@ int main() {
 		}
 		temp_num[index_i] = '\0';
 		points[num_points].x = stoai64(temp_num);
-		
+
 		index += 2;
 
 		index_i = 0;
@@ -197,55 +238,31 @@ int main() {
 	matrix[5][3] = 0;
 	matrix[5][4] = points[2].z - points[0].z;
 	matrix[5][5] = points[0].y - points[2].y;
+	matrix[0][6] = (points[1].y * points[1].v_x - points[1].x * points[1].v_y) - (points[0].y * points[0].v_x - points[0].x * points[0].v_y);
+	matrix[1][6] = (points[2].y * points[2].v_x - points[2].x * points[2].v_y) - (points[0].y * points[0].v_x - points[0].x * points[0].v_y);
+	matrix[2][6] = (points[1].x * points[1].v_z - points[1].z * points[1].v_x) - (points[0].x * points[0].v_z - points[0].z * points[0].v_x);
+	matrix[3][6] = (points[2].x * points[2].v_z - points[2].z * points[2].v_x) - (points[0].x * points[0].v_z - points[0].z * points[0].v_x);
+	matrix[4][6] = (points[1].z * points[1].v_y - points[1].y * points[1].v_z) - (points[0].z * points[0].v_y - points[0].y * points[0].v_z);
+	matrix[5][6] = (points[2].z * points[2].v_y - points[2].y * points[2].v_z) - (points[0].z * points[0].v_y - points[0].y * points[0].v_z);
 
+	printf("\n");
 	for (index = 0; index < 6; index++) {
-		for (index_i = 0; index_i < 6; index_i++) {
-			printf("%" PRId64 " ", matrix[index][index_i]);
+		for (index_i = 0; index_i < 7; index_i++) {
+			printf("%.f ", matrix[index][index_i]);
 		}
 		printf("\n");
 	}
 	printf("\n");
+	gaussianElimination(matrix, 6, 7);
 
 	printf("\n");
 
-	answer[0] = (points[1].y * points[1].v_x - points[1].x * points[1].v_y) - (points[0].y * points[0].v_x - points[0].x * points[0].v_y);
-	answer[1] = (points[2].y * points[2].v_x - points[2].x * points[2].v_y) - (points[0].y * points[0].v_x - points[0].x * points[0].v_y);
-	answer[2] = (points[1].x * points[1].v_z - points[1].z * points[1].v_x) - (points[0].x * points[0].v_z - points[0].z * points[0].v_x);
-	answer[3] = (points[2].x * points[2].v_z - points[2].z * points[2].v_x) - (points[0].x * points[0].v_z - points[0].z * points[0].v_x);
-	answer[4] = (points[1].z * points[1].v_y - points[1].y * points[1].v_z) - (points[0].z * points[0].v_y - points[0].y * points[0].v_z);
-	answer[5] = (points[2].z * points[2].v_y - points[2].y * points[2].v_z) - (points[0].z * points[0].v_y - points[0].y * points[0].v_z);
-
-	for (index = 0; index < 6; index++) {
-		printf("%.0f\n", answer[index]);
-	}
-	printf("\n");
-	printf("Det: %f\n\n", find_det(6, matrix));
-	find_inverse(matrix, inverse);
-	for (index = 0; index < 6; index++) {
-		for (index_i = 0; index_i < 6; index_i++) {
-			printf("%f ", inverse[index][index_i]);
-		}
-		printf("\n");
-	}
-
-	for (index = 0; index < 6; index++) {
-		for (index_i = 0; index_i < 6; index_i++) {
-			t_ans[index] += inverse[index][index_i] * answer[index_i];
-		}
-	}
-
-	printf("\n");
-
-	printf("Part 2?: %f\n", t_ans[0] + t_ans[1] + t_ans[2]);
-	
-	
 	for (index = 0; index < 6; index++) {
 		free(matrix[index]);
-		
+
 	}
 	free(matrix);
 	return 0;
-
 }
 
 
@@ -267,7 +284,7 @@ static struct point_3d check_intersect_2d(int16_t first, int16_t second) {
 		printf("\tx=%" PRId64 "t+%" PRId64 "\n", second_eq.v_x, second_eq.x);
 		printf("\ty=%" PRId64 "t+%" PRId64 "\n", second_eq.v_y, second_eq.y);
 	}
-	
+
 	//solve x sides
 	shift_s = (first_eq.x - second_eq.x) / ((double)second_eq.v_x);
 	slope_s = first_eq.v_x / ((double)second_eq.v_x);
@@ -329,8 +346,8 @@ static void find_inverse(int64_t** matrix, double m_minor[6][6]) {
 	}
 }
 
-static double find_minor(size_t size, size_t row, size_t col, int64_t** the_matrix) {
-	double the_m = 0;
+static int64_t find_minor(size_t size, size_t row, size_t col, int64_t** the_matrix) {
+	int64_t the_m = 0;
 	size_t index = 0;
 	size_t index_i = 0;
 	size_t new_size = size - 1;
@@ -379,10 +396,21 @@ static double find_minor(size_t size, size_t row, size_t col, int64_t** the_matr
 	return the_m;
 }
 
-static double find_det(size_t size, int64_t** the_matrix) {
-	double ans = 0;
+static int64_t find_det(size_t size, int64_t** the_matrix) {
+	int64_t ans = 0;
 	size_t index = 0;
-	int sign = 1;
+	int64_t sign = 1;
+	int64_t temp = 0;
+
+	if (DEBUG == 2 && size == 6) {
+		for (index = 0; index < size; index++) {
+			for (int in = 0; in < size; in++) {
+				printf("%" PRId64 " ", the_matrix[index][in]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
 
 	if (size == 2) {
 		ans = the_matrix[0][0] * the_matrix[1][1] - the_matrix[0][1] * the_matrix[1][0];
@@ -392,6 +420,20 @@ static double find_det(size_t size, int64_t** the_matrix) {
 				sign = 1;
 			} else {
 				sign = -1;
+			}
+			temp = find_minor(size, 0, index, the_matrix);
+			if ((the_matrix[0][index] >= 0 && temp >= 0) || (the_matrix[0][index] < 0 && temp < 0)) {
+				temp *= the_matrix[0][index];
+				if (temp < 0) {
+					printf("OVERFLOW, number too big\n");
+					exit(-7);
+				}
+			} else {
+				temp *= the_matrix[0][index];
+				if (temp > 0) {
+					printf("UNDERFLOW, number too small\n");
+					exit(-7);
+				}
 			}
 			ans += sign * the_matrix[0][index] * find_minor(size, 0, index, the_matrix);
 		}

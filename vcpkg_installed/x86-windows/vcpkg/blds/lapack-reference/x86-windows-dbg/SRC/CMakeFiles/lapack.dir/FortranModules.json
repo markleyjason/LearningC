@@ -1,0 +1,17 @@
+{
+	"modules" : 
+	{
+		"la_constants.mod" : 
+		{
+			"bmi" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/lapack-reference/x86-windows-dbg/SRC/la_constants.mod",
+			"is-private" : false
+		},
+		"la_xisnan.mod" : 
+		{
+			"bmi" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/lapack-reference/x86-windows-dbg/SRC/la_xisnan.mod",
+			"is-private" : false
+		}
+	},
+	"references" : {},
+	"usages" : {}
+}

@@ -1,0 +1,10 @@
+#define UNIT
+#define TRANSA 2
+#define ASMNAME _ctpsv_TLU
+#define ASMFNAME _ctpsv_TLU_
+#define NAME ctpsv_TLU_
+#define CNAME ctpsv_TLU
+#define CHAR_NAME "ctpsv_TLU_"
+#define CHAR_CNAME "ctpsv_TLU"
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level2/ztpsv_U.c"

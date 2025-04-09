@@ -1,0 +1,8 @@
+#define TT
+#define ASMNAME _sgemm_tt
+#define ASMFNAME _sgemm_tt_
+#define NAME sgemm_tt_
+#define CNAME sgemm_tt
+#define CHAR_NAME "sgemm_tt_"
+#define CHAR_CNAME "sgemm_tt"
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level3/gemm.c"

@@ -1,0 +1,8 @@
+Package: blas
+Version: 2023-03-25
+Depends: openblas, vcpkg-cmake:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 69ab7a278d1bcaf2f6f86e14ef120c6280058e20f59db2aed02efa5030e8e184
+Description: Metapackage for packages which provide BLAS
+Status: install ok half-installed

@@ -1,0 +1,8 @@
+#define ASMNAME _dsymv_U
+#define ASMFNAME _dsymv_U_
+#define NAME dsymv_U_
+#define CNAME dsymv_U
+#define CHAR_NAME "dsymv_U_"
+#define CHAR_CNAME "dsymv_U"
+#define DOUBLE
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/kernel/generic/symv_k.c"

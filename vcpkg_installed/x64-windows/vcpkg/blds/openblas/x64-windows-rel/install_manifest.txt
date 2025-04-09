@@ -1,0 +1,11 @@
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/bin/getarch.exe
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/bin/getarch_2nd.exe
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/lib/openblas.lib
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/bin/openblas.dll
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/include/openblas/openblas_config.h
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/include/openblas/cblas.h
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/lib/pkgconfig/openblas.pc
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/share/cmake/OpenBLAS/OpenBLASConfig.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/share/cmake/OpenBLAS/OpenBLASConfigVersion.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/share/cmake/OpenBLAS/OpenBLASTargets.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/openblas_x64-windows/share/cmake/OpenBLAS/OpenBLASTargets-release.cmake

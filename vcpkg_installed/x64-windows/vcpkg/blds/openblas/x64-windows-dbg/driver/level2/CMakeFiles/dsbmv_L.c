@@ -1,0 +1,9 @@
+#define LOWER
+#define ASMNAME _dsbmv_L
+#define ASMFNAME _dsbmv_L_
+#define NAME dsbmv_L_
+#define CNAME dsbmv_L
+#define CHAR_NAME "dsbmv_L_"
+#define CHAR_CNAME "dsbmv_L"
+#define DOUBLE
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level2/sbmv_k.c"

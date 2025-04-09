@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/x86-windows-dbg/ctest/CMakeFiles/xscblat2.dir/embed.manifest"

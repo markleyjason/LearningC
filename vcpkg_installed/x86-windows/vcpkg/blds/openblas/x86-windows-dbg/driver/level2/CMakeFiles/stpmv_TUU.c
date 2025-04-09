@@ -1,0 +1,9 @@
+#define UNIT
+#define TRANSA
+#define ASMNAME _stpmv_TUU
+#define ASMFNAME _stpmv_TUU_
+#define NAME stpmv_TUU_
+#define CNAME stpmv_TUU
+#define CHAR_NAME "stpmv_TUU_"
+#define CHAR_CNAME "stpmv_TUU"
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level2/tpmv_L.c"

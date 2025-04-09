@@ -1,0 +1,9 @@
+#define CC
+#define ASMNAME _cgemm_kernel_b
+#define ASMFNAME _cgemm_kernel_b_
+#define NAME cgemm_kernel_b_
+#define CNAME cgemm_kernel_b
+#define CHAR_NAME "cgemm_kernel_b_"
+#define CHAR_CNAME "cgemm_kernel_b"
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/kernel/x86/../generic/zgemmkernel_2x2.c"

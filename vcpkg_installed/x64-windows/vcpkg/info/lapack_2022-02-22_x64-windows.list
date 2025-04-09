@@ -1,0 +1,5 @@
+x64-windows/
+x64-windows/share/
+x64-windows/share/lapack/
+x64-windows/share/lapack/vcpkg.spdx.json
+x64-windows/share/lapack/vcpkg_abi_info.txt

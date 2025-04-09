@@ -1,0 +1,40 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg/SRC",
+	"dir-cur-src" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/src/v3.11.0-5e6de67bfb.clean/SRC",
+	"dir-top-bld" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg",
+	"dir-top-src" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/src/v3.11.0-5e6de67bfb.clean",
+	"exports" : 
+	[
+		{
+			"cxx-module-info-dir" : "",
+			"destination" : "lib/cmake/lapack-3.11.0",
+			"export-name" : "lapack",
+			"export-prefix" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg/CMakeFiles/Export/f415d2bf2d6ec6402dc1ffb36ed05389",
+			"filesystem-export-name" : "lapack",
+			"install" : true,
+			"namespace" : ""
+		},
+		{
+			"cxx-module-info-dir" : "",
+			"destination" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg",
+			"export-name" : "lapack",
+			"export-prefix" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg",
+			"filesystem-export-name" : "lapack",
+			"install" : false,
+			"namespace" : ""
+		}
+	],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "Fortran",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/lapack-reference/x64-windows-dbg/SRC",
+	"submodule-ext" : ".smod",
+	"submodule-sep" : "@"
+}

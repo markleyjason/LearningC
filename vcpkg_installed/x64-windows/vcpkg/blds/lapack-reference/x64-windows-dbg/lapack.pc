@@ -1,0 +1,9 @@
+libdir=C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/lapack-reference_x64-windows/debug/lib
+includedir=C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/pkgs/lapack-reference_x64-windows/debug/include
+
+Name: LAPACK
+Description: FORTRAN reference implementation of LAPACK Linear Algebra PACKage
+Version: 3.11.0
+URL: http://www.netlib.org/lapack/
+Libs: -L${libdir} -llapack
+Requires.private: blas

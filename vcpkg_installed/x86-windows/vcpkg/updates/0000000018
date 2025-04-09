@@ -1,0 +1,9 @@
+Package: lapack
+Version: 2022-02-22
+Port-Version: 2
+Depends: lapack-reference, vcpkg-cmake:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: a997e5aa122e6c68b2ce923e5d0567063fde0533f4a99205048884a9f2367672
+Description: Metapackage for packages which provide LAPACK
+Status: install ok half-installed

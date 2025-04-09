@@ -1,0 +1,8 @@
+Package: vcpkg-gfortran
+Version: 3
+Port-Version: 3
+Architecture: x86-windows
+Multi-Arch: same
+Abi: a10c37fb8dffc7d4a661d40c346c5a924a56b182e9afa35ef0a180d23ef6afd4
+Description: Metaport to install gfortran dependencies from msys if VCPKG_USE_EXTERNAL_Fortran is false
+Status: install ok installed

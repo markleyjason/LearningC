@@ -1,0 +1,97 @@
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ea57f2a7433e7b55580e9888e768192b643d7e4a30754a653d3836db3de8c51e
+Status: install ok installed
+
+Package: vcpkg-cmake-get-vars
+Version: 2023-03-02
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 78fd1dc1e4b69bf664d7f8704a98fcc0318f723304e7fb8e7aafc949af520bfe
+Status: install ok installed
+
+Package: vcpkg-cmake-config
+Version: 2022-02-06
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 41edb48b8701f468a0dc23aee5f04409e21f6a0b2ab0127046ada3816ed02126
+Status: install ok installed
+
+Package: openssl
+Version: 3.1.2
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-cmake-get-vars
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f9df6bdce68b2c818963592421461d0f678e5550a96b0037e9ea1dc1625e03b2
+Description: OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.
+Status: install ok installed
+
+Package: openblas
+Version: 0.3.23
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e037ef94114d8340ace89476024f6eb6e7e4e16769e83b47080bdeea46d5cbd0
+Description: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+Status: install ok installed
+
+Package: blas
+Version: 2023-03-25
+Depends: openblas, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6993d990ea482136e7d961c2507ab804dc7d2fdae47fe6f5fd1a69d0bd48e4b8
+Description: Metapackage for packages which provide BLAS
+Status: install ok installed
+
+Package: vcpkg-gfortran
+Version: 3
+Port-Version: 3
+Architecture: x64-windows
+Multi-Arch: same
+Abi: bd39a6a96810837702490db0c579d61f7371d79ecabdbc76e9f473c1a7d432ae
+Description: Metaport to install gfortran dependencies from msys if VCPKG_USE_EXTERNAL_Fortran is false
+Status: install ok installed
+
+Package: lapack-reference
+Version: 3.11.0
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-gfortran
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 1b51dee3a91aac6141fe613d8e59e929aebc68b0b6189c9c4c670533df2d4f50
+Description: LAPACK - Linear Algebra PACKage
+Default-Features: blas-select
+Status: install ok installed
+
+Package: lapack-reference
+Feature: blas-select
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use external optimized BLAS
+Status: install ok installed
+
+Package: lapack-reference
+Feature: noblas
+Depends: blas
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use external optimized BLAS
+Status: install ok installed
+
+Package: lapack
+Version: 2022-02-22
+Port-Version: 2
+Depends: lapack-reference, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9fc2a2fad06830206c9ac752668c905adb3e8a2e2cf619b67d6342941d8c6609
+Description: Metapackage for packages which provide LAPACK
+Status: install ok installed
+

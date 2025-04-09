@@ -1,0 +1,9 @@
+#define NT
+#define ASMNAME _cgemm_nt
+#define ASMFNAME _cgemm_nt_
+#define NAME cgemm_nt_
+#define CNAME cgemm_nt
+#define CHAR_NAME "cgemm_nt_"
+#define CHAR_CNAME "cgemm_nt"
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level3/gemm.c"

@@ -1,0 +1,10 @@
+#define NN
+#define ASMNAME _zhemm_LU
+#define ASMFNAME _zhemm_LU_
+#define NAME zhemm_LU_
+#define CNAME zhemm_LU
+#define CHAR_NAME "zhemm_LU_"
+#define CHAR_CNAME "zhemm_LU"
+#define DOUBLE
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x64-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/driver/level3/zhemm_k.c"

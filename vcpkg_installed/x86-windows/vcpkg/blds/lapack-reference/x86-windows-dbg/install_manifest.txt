@@ -1,0 +1,8 @@
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/cmake/lapack-3.11.0/lapack-targets.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/cmake/lapack-3.11.0/lapack-targets-debug.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/pkgconfig/lapack.pc
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/cmake/lapack-3.11.0/lapack-config.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/cmake/lapack-3.11.0/lapack-config-version.cmake
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/liblapack.dll.a
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/lib/liblapack.lib
+C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/pkgs/lapack-reference_x86-windows/debug/bin/liblapack.dll

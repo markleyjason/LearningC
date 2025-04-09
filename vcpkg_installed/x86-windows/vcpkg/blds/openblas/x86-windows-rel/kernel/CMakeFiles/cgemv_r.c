@@ -1,0 +1,9 @@
+#define CONJ
+#define ASMNAME _cgemv_r
+#define ASMFNAME _cgemv_r_
+#define NAME cgemv_r_
+#define CNAME cgemv_r
+#define CHAR_NAME "cgemv_r_"
+#define CHAR_CNAME "cgemv_r"
+#define COMPLEX
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/kernel/x86/../arm/zgemv_n.c"

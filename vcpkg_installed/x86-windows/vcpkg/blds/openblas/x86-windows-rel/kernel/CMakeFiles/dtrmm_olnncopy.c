@@ -1,0 +1,10 @@
+#define OUTER
+#define LOWER
+#define ASMNAME _dtrmm_olnncopy
+#define ASMFNAME _dtrmm_olnncopy_
+#define NAME dtrmm_olnncopy_
+#define CNAME dtrmm_olnncopy
+#define CHAR_NAME "dtrmm_olnncopy_"
+#define CHAR_CNAME "dtrmm_olnncopy"
+#define DOUBLE
+#include "C:/Users/markl/source/repos/LearningC/vcpkg_installed/x86-windows/vcpkg/blds/openblas/src/77a956eb52-3cc04fdab8.clean/kernel/generic/trmm_lncopy_2.c"

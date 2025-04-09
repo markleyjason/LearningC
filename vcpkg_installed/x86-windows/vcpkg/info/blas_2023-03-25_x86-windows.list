@@ -1,0 +1,6 @@
+x86-windows/
+x86-windows/share/
+x86-windows/share/blas/
+x86-windows/share/blas/vcpkg-cmake-wrapper.cmake
+x86-windows/share/blas/vcpkg.spdx.json
+x86-windows/share/blas/vcpkg_abi_info.txt
